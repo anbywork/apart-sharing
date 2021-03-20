@@ -1,0 +1,27 @@
+
+@mixin reset() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-list() {
+  @include reset;
+  list-style: none;
+}
+
+$white: #FFFFFF;
+$black: #000000;
+$text: #444444;
+$text70: rgba($text, 0.7);
+$blue: #00B4D8;
+$grey: #A7B4BB;
+
+
+$desktop: 1170px;
+$ipadpro: 1024px;
+$tablet: 750px;
+$iphone11: 375px;
+$iphoneSE: 320px;
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
