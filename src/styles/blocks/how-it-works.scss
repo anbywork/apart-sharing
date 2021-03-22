@@ -1,0 +1,108 @@
+.how-it-works {
+  position: relative;
+  background-color: #3F4785;
+  background-image:  url("/img/decoration/how-it-works/house.svg"), linear-gradient(170.02deg, #3F4785 0%, #5663F6 100%);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: $white;
+  overflow-x: hidden;
+}
+
+//balloon
+.how-it-works::before {
+  position: absolute;
+  content: '';
+  bottom: 120px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-image: url("/img/decoration/how-it-works/cloud.svg");
+  background-repeat: no-repeat;
+  animation: clouds 5s linear both alternate infinite;
+}
+.how-it-works::after {
+  position: absolute;
+  content: '';
+  bottom: 70px;
+  left: 80px;
+  width: 100%;
+  height: 120px;
+  background-image: url("/img/decoration/how-it-works/ballon.svg");
+  background-repeat: no-repeat;
+  animation: balloon 2s ease-in-out both alternate infinite;
+}
+
+.how-it-works.section {
+  padding-bottom: 262px;
+}
+
+.how-it-works__step-list {
+  @include reset-list;
+  padding-left: 15px;
+}
+
+.how-it-works__step {
+  position: relative;
+  padding: 16px 16px 16px 30px;
+  border: 1px solid rgba($white, 0.5);
+  border-radius: 12px;
+
+  & + .how-it-works__step {
+    margin-top: 20px;
+  }
+
+  &::before {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    content: '';
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $white;
+    color: $blue;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &:nth-child(1)::before {
+    content: '1';
+  }
+  &:nth-child(2)::before {
+    content: '2';
+  }
+  &:nth-child(3)::before {
+    content: '3';
+  }
+  &:nth-child(4)::before {
+    content: '4';
+  }
+  &:nth-child(5)::before {
+    content: '5';
+  }
+}
+
+
+.how-it-works__step h3 {
+  @include reset;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+
+
+.how-it-works__step p {
+  @include reset;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba($white, 0.7);
+}
+
