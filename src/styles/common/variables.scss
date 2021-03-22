@@ -9,12 +9,13 @@
   list-style: none;
 }
 
+$dark: #28282A;
+$dark70: rgba(#28282A, 0.7);
 $white: #FFFFFF;
-$black: #000000;
-$text: #444444;
-$text70: rgba($text, 0.7);
-$blue: #00B4D8;
-$grey: #A7B4BB;
+$blue: #5663F6;
+$light-grey: #F6F6F8;
+$light-blue: #E8EAFF;
+
 
 
 $desktop: 1170px;

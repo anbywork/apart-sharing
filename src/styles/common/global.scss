@@ -4,16 +4,11 @@
 
 body {
   @include reset();
-  padding-top: 50px;
-  font-family: 'Arial', sans-serif;
-  font-size: 12px;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: $text;
-  @media screen and (min-width: $tablet) {
-    padding-top: 70px;
-  }
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  color: $dark;
 }
 
 img {
@@ -30,34 +25,17 @@ a,
   box-shadow: none;
   border: none;
   background-color: transparent;
-  color: $text70;
-  font-size: 12px;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  color: $blue;
   text-decoration: none;
   transition-property: color, box-shadow, fill, stroke;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
   &:hover,
   &:focus {
-    box-shadow: 0 1px 0 0 $blue;
-    color: $text70;
+    text-decoration: underline;
+    color: darken($blue, 10%);
     border: none;
     outline: none;
-  }
-}
-
-.page__title {
-  @include reset;
-  margin-bottom: 30px;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 120%;
-  text-align: center;
-  color: $black;
-  @media screen and (min-width: $tablet) {
-    margin-bottom: 40px;
   }
 }
 

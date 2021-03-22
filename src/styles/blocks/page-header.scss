@@ -1,0 +1,119 @@
+@keyframes open-navigation {
+  0% {
+    display: none;
+  }
+  1% {
+    display: flex;
+    transform: translateX(110%);
+  }
+  100% {
+    display: flex;
+    transform: translateX(0);
+  }
+}
+
+@keyframes close-navigation {
+  0% {
+    display: flex;
+    transform: translateX(0);
+  }
+  99% {
+    display: flex;
+    transform: translateX(110%);
+  }
+  100% {
+    display: none;
+    transform: translateX(110%);
+  }
+}
+
+.page-header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  width: 100%;
+  z-index: 10;
+  height: 60px;
+  transition: background-color 300ms ease-in-out;
+}
+
+.page-header--white {
+  background-color: $blue;
+}
+
+.page-header__burger {
+  @include reset;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: none;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  &:hover,
+  &:focus {
+    // todo: доработать поведение на десктопе
+    outline: none;
+    //box-shadow: 0 0 1px $blue;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    left: calc(50% - 7px);
+    width: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: $white;
+    transition: transform 100ms ease-in-out;
+  }
+
+  &::before {
+    top: 11px;
+  }
+
+  &::after {
+    bottom: 11px;
+    width: 10px;
+  }
+
+  &--opened {
+    &::before {
+      top: calc(50% - 1px);
+      transform: rotate(45deg);
+    }
+    &::after {
+      top: calc(50% - 1px);
+      width: 14px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.page-header__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  transform: translateX(110%);
+}
+
+.page-header__nav--opened {
+  display: flex;
+  animation: open-navigation 300ms ease-in-out both;
+}
+
+.page-header__nav--closed {
+  display: flex;
+  animation: close-navigation 300ms ease-in-out both;
+}
+
+
+
+
+
+

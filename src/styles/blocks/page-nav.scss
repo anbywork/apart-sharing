@@ -1,0 +1,89 @@
+@keyframes clouds {
+  0% {
+    background-position: -35px 0;
+  }
+  100% {
+    background-position: 35px 0;
+  }
+}
+
+@keyframes balloon {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 5px;
+  }
+}
+
+.page-nav {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(170.02deg, #3F4785 0%, #5663F6 100%);
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+
+.page-nav::before {
+  position: absolute;
+  content: '';
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-image: url("/img/decoration/clouds.svg");
+  background-repeat: no-repeat;
+  animation: clouds 5s linear both alternate infinite;
+}
+.page-nav::after {
+  position: absolute;
+  content: '';
+  top: 70px;
+  left: calc(60% - 50px);
+  width: 100%;
+  height: 120px;
+  background-image: url("/img/decoration/balloon.svg");
+  background-repeat: no-repeat;
+  animation: balloon 2s ease-in-out both alternate infinite;
+}
+
+.page-nav .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.page-nav__list {
+  @include reset-list;
+}
+
+.page-nav__item + .page-nav__item {
+  margin-top: 16px;
+}
+
+.page-nav__link {
+  @include reset;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: $white;
+  &:focus,
+  &:hover {
+    color: rgba($white, 0.8);
+  }
+}
+
+.page-nav .btn-list {
+  align-self: center;
+  max-width: 240px;
+  margin-top: 40px;
+}
+
+.page-nav .btn {
+  & span {
+    background-color: transparent;
+    border: 1px solid $white;
+  }
+}

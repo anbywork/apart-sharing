@@ -1,0 +1,7 @@
+.btn-list {
+  @include reset-list;
+}
+
+.btn-list li + li {
+  margin-top: 10px;
+}

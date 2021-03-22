@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Apart Sharing — бесконтактная аренда жилья в вашем смартфоне</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.min.css">
 </head>
 <body>
     <header class="page-header">
@@ -21,28 +25,36 @@
             <path d="M130.319 11.1564V4.21637C130.319 3.28239 130.611 2.51488 131.195 1.91385C131.809 1.28687 132.608 0.973378 133.594 0.973378C134.567 0.973378 135.367 1.28687 135.994 1.91385C136.578 2.49326 136.87 3.26077 136.87 4.21637V10.5726L135.637 11.1564H135.573V4.21637C135.573 3.63695 135.417 3.1678 135.106 2.80891C134.721 2.36354 134.217 2.14085 133.594 2.14085C132.972 2.14085 132.468 2.36354 132.083 2.80891C131.772 3.1678 131.616 3.63695 131.616 4.21637V10.5726L130.384 11.1564H130.319Z" fill="white"/>
             <path d="M150 5.40979V7.78366C150 8.72196 149.708 9.48947 149.124 10.0862C148.51 10.7132 147.71 11.0267 146.725 11.0267C145.739 11.0267 144.939 10.7132 144.325 10.0862C143.741 9.48947 143.449 8.72196 143.449 7.78366V4.21637C143.449 3.27806 143.741 2.51056 144.325 1.91385C144.939 1.28687 145.739 0.973378 146.725 0.973378C147.745 0.973378 148.545 1.28687 149.124 1.91385C149.708 2.54082 150 3.26509 150 4.08665L148.768 4.67039H148.703V4.21637C148.703 3.63695 148.547 3.1678 148.236 2.80891C147.851 2.36354 147.347 2.14085 146.725 2.14085C146.102 2.14085 145.598 2.36354 145.213 2.80891C144.902 3.1678 144.746 3.63695 144.746 4.21637V7.78366C144.746 8.36307 144.902 8.83223 145.213 9.19112C145.598 9.63649 146.102 9.85917 146.725 9.85917C147.347 9.85917 147.851 9.63649 148.236 9.19112C148.547 8.83223 148.703 8.40631 148.703 7.91338V6.59024H146.446V6.52538L146.971 5.40979H150Z" fill="white"/>
         </svg>
-        <button class="page-header__burger-open"><span class="visually-hidden">Показать навигацию</span></button>
-        <nav class="navigation">
-            <button class="page-header__burger-close"><span class="visually-hidden">Скрыть навигацию</span></button>
-            <ul class="page-nav__list">
-                <li class="page-nav__item"><a class="page-nav__link" href="#">Как это работает</a></li>
-                <li class="page-nav__item"><a class="page-nav__link" href="#">Квартиры</a></li>
-                <li class="page-nav__item"><a class="page-nav__link" href="#">Что есть в квартирах</a></li>
-                <li class="page-nav__item"><a class="page-nav__link" href="#">Отзывы</a></li>
-                <li class="page-nav__item"><a class="page-nav__link" href="#">Функции приложения</a></li>
-                <li class="page-nav__item"><a class="page-nav__link" href="#">Вопросы и ответы</a></li>
-                <li class="page-nav__item"><a class="page-nav__link" href="#">Помощь</a></li>
-            </ul>
-            @@include('html-blocks/_btn-list.html')
+
+        <nav class="page-header__nav page-nav">
+            <div class="content-wrapper">
+                <ul class="page-nav__list">
+                    <li class="page-nav__item"><a class="page-nav__link" href="#">Как это работает</a></li>
+                    <li class="page-nav__item"><a class="page-nav__link" href="#">Квартиры</a></li>
+                    <li class="page-nav__item"><a class="page-nav__link" href="#">Что есть в квартирах</a></li>
+                    <li class="page-nav__item"><a class="page-nav__link" href="#">Отзывы</a></li>
+                    <li class="page-nav__item"><a class="page-nav__link" href="#">Функции приложения</a></li>
+                    <li class="page-nav__item"><a class="page-nav__link" href="#">Вопросы и ответы</a></li>
+                    <li class="page-nav__item"><a class="page-nav__link" href="#">Помощь</a></li>
+                </ul>
+                @@include('html-blocks/_btn-list.html')
+            </div>
+
         </nav>
+        <button class="page-header__burger"><span class="visually-hidden">Показать навигацию</span></button>
     </header>
     <main>
         <section class="description">
-            <h1>Бесконтактная аренда жилья в вашем смартфоне</h1>
-            <p>Получите доступ к бесконтактной аренде квартир в 9 городах России</p>
-            @@include('html-blocks/_btn-list.html')
+            <div class="description__img">
+                <img src="/img/content/app-start.png" alt="">
+            </div>
+            <div class="content-wrapper">
+                <h1 class="description__title">Бесконтактная аренда жилья в вашем смартфоне</h1>
+                <p class="description__text">Получите доступ к бесконтактной аренде квартир в 9 городах России</p>
+                @@include('html-blocks/_btn-list.html')
+            </div>
         </section>
-        <section class="how-it-works section dn">
+        <section class="how-it-works section">
             <h2 class="section__title">Как это работает</h2>
             <ul class="how-it-works__step-list">
                 <li class="how-it-works__step">
@@ -191,6 +203,6 @@
             <a href="">Пользовательское соглашение</a>
         </div>
     </footer>
-
+    <script src="/js/script.min.js"></script>
 </body>
 </html>

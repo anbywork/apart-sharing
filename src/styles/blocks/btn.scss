@@ -1,0 +1,39 @@
+.btn {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+
+  & span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    min-height: 56px;
+    background-color: $blue;
+    box-shadow: inset 4px 4px 4px rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    border: none;
+    font: inherit;
+    color: $white;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &:hover span,
+  &:focus span {
+    background-color: darken($blue, 10%);
+  }
+}
+
+.btn--outline {
+  & span {
+    background-color: transparent;
+    border: 1px solid $white;
+  }
+
+}
+
+
+
