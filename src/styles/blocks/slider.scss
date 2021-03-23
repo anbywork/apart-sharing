@@ -1,0 +1,51 @@
+.slider {
+  position: relative;
+}
+
+.slider__list-container {
+  overflow-x: hidden;
+}
+
+.slider__list,
+.slider__controls {
+  @include reset-list;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.slider__list {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.slider__list li {
+  width: 100%;
+}
+
+.slider__controls {
+  position: absolute;
+  left: 12px;
+  bottom: 8px;
+
+  & li + li {
+    margin-left: 8px;
+  }
+}
+
+
+
+.slider__radio-indicator {
+  display: flex;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: $white;
+}
+
+input[type=radio]:checked ~ .slider__radio-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: $blue;
+  border: 2px solid $white;
+}

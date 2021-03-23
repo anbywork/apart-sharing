@@ -52,6 +52,9 @@ const packages = {
 
   gulpMinJs: require('gulp-uglify-es').default,
   babel: require('gulp-babel'),
+  webpack: require('webpack'),
+  gulpUtil: require('gulp-util'),
+  notifier: require('node-notifier'),
 
   imgMin: require('gulp-image'),
   svgo: require('gulp-svgo'),
@@ -64,6 +67,12 @@ const packages = {
   gulpif: require('gulp-if'),
 
   browserSync: require('browser-sync').create(),
+};
+
+const webpackConfig = require('./webpack.config');
+const statsLog = {
+  colors: true,
+  reasons: true
 };
 
 task('clean', ()=> {
@@ -111,31 +120,30 @@ task('copyfonts', () => {
   return src(SOURCE_FOLDER + '/fonts/*.woff*').pipe(dest(PATH.build.fonts));
 })
 
-task('js', ()=> {
-  return src(PATH.src.js)
-    .pipe(packages.sourcemaps.init())
-    .pipe(packages.concat('script.js', {newLine: ';'}))
-    .pipe(packages.babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(dest(PATH.build.js))
-    .pipe(packages.gulpMinJs())
-    .pipe(packages.sourcemaps.write())
-    .pipe(packages.gulpRename('script.min.js'))
-    .pipe(dest(PATH.build.js))
-    .pipe(packages.browserSync.reload({stream: true}));
-});
+task('webpack', (done) => {
+  packages.webpack(webpackConfig, onComplete);
 
-task('jsProd', ()=> {
-  return src(PATH.src.js)
-    .pipe(packages.concat('script.js', {newLine: ';'}))
-    .pipe(packages.babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(dest(PATH.build.js))
-    .pipe(packages.gulpMinJs())
-    .pipe(packages.sourcemaps.write())
-    .pipe(packages.gulpRename('script.min.js'))
+  function onComplete(error, stats) {
+    if (error) {
+      onError(error);
+    } else if ( stats.hasErrors() ) {
+      onError( stats.toString(statsLog) );
+    } else {
+      onSuccess( stats.toString(statsLog) );
+    }
+  }
+  function onError(error) {
+    let formatedError = new packages.gulpUtil.PluginError('webpack', error);
+    packages.notifier.notify({
+      title: `Error: ${formatedError.plugin}`,
+      message: formatedError.message
+    });
+    done(formatedError);
+  }
+  function onSuccess(detailInfo) {
+    packages.gulpUtil.log('[webpack]', detailInfo);
+    done();
+  }
 });
 
 task('sassToCss', ()=> {
@@ -184,14 +192,15 @@ task('browserSync', ()=> {
 });
 
 
+
 task('watch', ()=> {
   watch(PATH.watch.html, series('html'));
-  watch(PATH.watch.js, series('js'));
+  watch(PATH.watch.js, series('webpack'));
   watch(PATH.watch.scss, series('sassToCss'));
   watch(PATH.watch.img, series('images-min'));
 });
 
-task('default', series('clean', parallel('images-min', 'html', 'js', 'sassToCss'), parallel('watch', 'browserSync')));
-task('build', series('clean', parallel('images-min', 'html', 'jsProd', 'sassToCssProd')));
+task('default', series('clean', parallel('images-min', 'html', 'webpack', 'sassToCss'), parallel('watch', 'browserSync')));
+task('build', series('clean', parallel('images-min', 'html', 'webpack', 'sassToCssProd')));
 
 

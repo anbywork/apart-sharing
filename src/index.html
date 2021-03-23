@@ -79,14 +79,14 @@
                 </ul>
             </div>
         </section>
-        <section class="flats section dn">
+        <section class="flats section">
             <h2 class="section__title">Вы можете въехать сюда уже сегодня</h2>
-            <ul class="flats__list">
-                @@include('html-blocks/_flat.html')
-                @@include('html-blocks/_flat.html')
-                @@include('html-blocks/_flat.html')
-            </ul>
+            <div class="flats__list-container">
+                <ul class="flats__list"></ul>
+            </div>
+
             @@include('html-blocks/_btn-list.html')
+
         </section>
         <section class="flat-features section dn">
             <h2 class="section__title">В каждой квартире есть wi-fi и минибар</h2>
@@ -205,6 +205,6 @@
             <a href="">Пользовательское соглашение</a>
         </div>
     </footer>
-    <script src="/js/script.min.js"></script>
+    <script src="/js/bundle.js"></script>
 </body>
 </html>

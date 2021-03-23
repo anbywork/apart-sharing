@@ -1,6 +1,4 @@
-{
-    'use strict';
-
+export const setBtnsList = () => {
     const btnsLists = document.querySelectorAll('.btn-list');
     const os = getMobileOperatingSystem();
     for (let i = 0; i < btnsLists.length; i++) {
@@ -26,4 +24,4 @@
             return 'unknown';
         }
     }
-}
+};

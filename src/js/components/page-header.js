@@ -1,6 +1,4 @@
-{
-    'use strict';
-
+export const setPageHeader = () => {
     window.addEventListener('scroll', function() {
         const pageHeader = document.querySelector('.page-header');
         const pageOffset = document.documentElement.scrollTop;

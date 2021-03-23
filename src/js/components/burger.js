@@ -1,5 +1,4 @@
-{
-    'use strict';
+export const setBurger = () => {
     const header = document.querySelector('.page-header');
     const burgerBtn = header.querySelector('.page-header__burger');
     const navigationMenu = header.querySelector('.page-header__nav');
@@ -25,4 +24,4 @@
         navigationMenu.classList.add('page-header__nav--closed');
         burgerBtn.classList.remove('page-header__burger--opened');
     }
-}
+};

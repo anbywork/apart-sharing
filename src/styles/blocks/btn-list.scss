@@ -1,5 +1,7 @@
 .btn-list {
   @include reset-list;
+  margin: 0 auto;
+  width: 240px;
 }
 
 .btn-list li + li {
