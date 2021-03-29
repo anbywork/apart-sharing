@@ -93,13 +93,18 @@
             <p>А еще стиральная машина, фен, кровать с&nbsp;белоснежным бельем и&nbsp;кухня.</p>
             <p>Также при подборе вы можете выбрать класс квартиры, количество комнат и посмотреть, что еще есть&nbsp;в&nbsp;квартире.</p>
         </section>
-        <section class="reviews section dn">
-            <h2>Отзывы тех, кто уже воспользовался сервисом</h2>
-            <ul class="reviews__list">
-                @@include('html-blocks/_review.html')
-                @@include('html-blocks/_review.html')
-                @@include('html-blocks/_review.html')
-            </ul>
+        <section class="reviews section">
+            <div class="content-wrapper">
+                <h2 class="section__title">Отзывы тех, кто уже воспользовался сервисом</h2>
+            </div>
+            <div class="reviews__list-container">
+                <ul class="reviews__list">
+                    @@include('html-blocks/_review.html')
+                    @@include('html-blocks/_review.html')
+                    @@include('html-blocks/_review.html')
+                </ul>
+            </div>
+            
         </section>
         <section class="features section dn">
             <h2 class="section__title">Что еще можно делать в&nbsp;приложении?</h2>

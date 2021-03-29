@@ -1,0 +1,93 @@
+.reviews {
+  background-color: $light-grey;
+}
+
+.reviews .section__title {
+  margin-bottom: 20px;
+}
+
+
+.reviews__list {
+  @include reset-list;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  padding: 10px 0;
+  
+  &::after,
+  &::before {
+    display: block;
+    content: '';
+    width: 15px;
+    flex-shrink: 0;
+  }
+}
+
+.review {
+  padding: 20px;
+  margin-bottom: 10px;
+  min-width: 270px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 8px rgba(86, 99, 246, 0.16);
+  background: #FFFFFF;
+  
+  
+  & + .review {
+    margin-left: 12px;
+  }
+  
+  & p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $dark;
+  }
+}
+
+.review-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.review-footer__rating {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-top: 5px;
+  margin-right: 12px;
+  min-height: 30px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: $dark;
+  
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url("/img/decoration/sprite.svg");
+    background-position: 0 0;
+    
+  }
+}
+
+.review-footer__name {
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $dark;
+}
+
+.review-footer__data {
+  margin-left: auto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+}
