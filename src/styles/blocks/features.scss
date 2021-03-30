@@ -1,0 +1,45 @@
+
+
+.features__list {
+  @include reset-list;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+  margin-bottom: 20px;
+  overflow-x: hidden;
+}
+
+.features__item img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.features__item span {
+  text-align: center;
+}
+
+.features__item span br {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  
+}
+
+.features .slider__controls {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.features .slider__radio-indicator {
+  border: 2px solid $light-blue;
+}

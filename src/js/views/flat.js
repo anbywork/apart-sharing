@@ -15,17 +15,17 @@ export const createFlatTemplate = (flat, flatIndex) => {
   const generateImagesControl = () => {
     let imagesControlHTML = '';
     for (let i = 0; i < images.length; i++) {
-      imagesControlHTML += `<li>
+      imagesControlHTML +=`<li>
                     <label>
                         <input
                         class="visually-hidden" 
                         type="radio" 
                         name="flat-img-slider__control-${flatIndex}" 
-                        value="&{i}"
+                        value="${i}"
                         ${i == 0 ? "checked" : ''}>
                         <span class="slider__radio-indicator"></span>
                     </label>
-                </li>`
+                </li>`;
     }
     return imagesControlHTML;
   }

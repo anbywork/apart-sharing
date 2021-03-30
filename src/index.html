@@ -1,215 +1,271 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Apart Sharing — бесконтактная аренда жилья в вашем смартфоне</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>Apart Sharing — бесконтактная аренда жилья в вашем смартфоне</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.min.css">
 </head>
 <body>
-    <header class="page-header">
-        <svg width="150" height="12" viewBox="0 0 150 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 11.1564V4.21637C0 3.28239 0.291869 2.51488 0.875608 1.91385C1.48961 1.28687 2.28955 0.973378 3.27542 0.973378C4.24399 0.973378 5.04393 1.28687 5.67523 1.91385C6.25897 2.49326 6.55084 3.26077 6.55084 4.21637V10.5726L5.31851 11.1564H5.25365V6.59024H1.2972V10.5726L0.0648598 11.1564H0ZM1.2972 5.40979H5.25365V4.21637C5.25365 3.63695 5.09798 3.1678 4.78665 2.80891C4.40182 2.36354 3.89808 2.14085 3.27542 2.14085C2.65277 2.14085 2.14902 2.36354 1.76419 2.80891C1.45286 3.1678 1.2972 3.63695 1.2972 4.21637V5.40979Z" fill="white"/>
-            <path d="M14.4274 6.4216H16.2759C16.8424 6.4216 17.3461 6.19892 17.7872 5.75355C18.0985 5.4379 18.2541 4.96874 18.2541 4.34609C18.2541 3.76667 18.0985 3.29752 17.7872 2.93863C17.4023 2.49326 16.8986 2.27057 16.2759 2.27057H14.4274V6.4216ZM13.1302 11.1564V1.4274L13.8177 1.1031H16.2759C17.2618 1.1031 18.0617 1.41659 18.6757 2.04357C19.2595 2.64028 19.5513 3.40778 19.5513 4.34609C19.5513 5.28872 19.2595 6.05623 18.6757 6.64861C18.0574 7.27559 17.2575 7.58908 16.2759 7.58908H14.4274V10.5726L13.1951 11.1564H13.1302Z" fill="white"/>
-            <path d="M25.4821 11.1564V4.21637C25.4821 3.28239 25.774 2.51488 26.3577 1.91385C26.9717 1.28687 27.7717 0.973378 28.7575 0.973378C29.7261 0.973378 30.5261 1.28687 31.1574 1.91385C31.7411 2.49326 32.033 3.26077 32.033 4.21637V10.5726L30.8006 11.1564H30.7358V6.59024H26.7793V10.5726L25.547 11.1564H25.4821ZM26.7793 5.40979H30.7358V4.21637C30.7358 3.63695 30.5801 3.1678 30.2688 2.80891C29.8839 2.36354 29.3802 2.14085 28.7575 2.14085C28.1349 2.14085 27.6311 2.36354 27.2463 2.80891C26.935 3.1678 26.7793 3.63695 26.7793 4.21637V5.40979Z" fill="white"/>
-            <path d="M38.6123 11.1564V1.4274L39.2999 1.1031H41.758C42.7439 1.1031 43.5439 1.41659 44.1579 2.04357C44.7416 2.64028 45.0335 3.40778 45.0335 4.34609C45.0335 5.28872 44.7416 6.05623 44.1579 6.64861C43.8119 6.99886 43.4076 7.25181 42.945 7.40747L45.1891 10.618L44.0476 11.1564H43.9827L41.4856 7.58908H39.9095V10.5726L38.6772 11.1564H38.6123ZM39.9095 6.4216H41.758C42.3245 6.4216 42.8282 6.19892 43.2693 5.75355C43.5806 5.4379 43.7363 4.96874 43.7363 4.34609C43.7363 3.76667 43.5806 3.29752 43.2693 2.93863C42.8844 2.49326 42.3807 2.27057 41.758 2.27057H39.9095V6.4216Z" fill="white"/>
-            <path d="M52.3069 11.1564V2.28355H49.5308V2.21869L50.0562 1.1031H56.38V1.16796L55.8547 2.28355H53.604V10.5726L52.3717 11.1564H52.3069Z" fill="white"/>
-            <path d="M77.1534 7.83555C77.1534 8.71764 76.8636 9.46785 76.2842 10.0862C75.6918 10.7132 74.8919 11.0267 73.8844 11.0267C72.8769 11.0267 72.077 10.7132 71.4846 10.0862C70.9009 9.46785 70.609 8.74358 70.609 7.91338L71.8413 7.32964H71.9062V7.86149C71.9062 8.38902 72.0619 8.83223 72.3732 9.19112C72.758 9.63649 73.2618 9.85917 73.8844 9.85917C74.5027 9.85917 75.0065 9.63649 75.3956 9.19112C75.7027 8.84087 75.8562 8.39334 75.8562 7.84852C75.8562 7.33396 75.7308 6.92967 75.48 6.63564C75.134 6.22919 74.6022 6.02596 73.8844 6.02596C73.0975 6.02596 72.4164 5.76652 71.8413 5.24764C71.4089 4.85848 71.1927 4.2942 71.1927 3.5548C71.1927 2.68568 71.4608 2.03276 71.997 1.59603C72.5072 1.18093 73.1364 0.973378 73.8844 0.973378C74.6325 0.973378 75.2616 1.18093 75.7718 1.59603C76.308 2.03276 76.5761 2.63163 76.5761 3.39265L75.3438 3.97639H75.2789V3.45751C75.2789 2.96457 75.1384 2.59704 74.8573 2.35489C74.5849 2.11707 74.2606 1.99816 73.8844 1.99816C73.465 1.99816 73.1277 2.13004 72.8726 2.39381C72.6175 2.65757 72.4899 3.01214 72.4899 3.45751C72.4899 3.88558 72.5872 4.20772 72.7818 4.42392C73.0412 4.71363 73.4088 4.85848 73.8844 4.85848C74.9308 4.85848 75.7308 5.10495 76.2842 5.59788C76.8636 6.11244 77.1534 6.85833 77.1534 7.83555Z" fill="white"/>
-            <path d="M83.4798 11.1564V1.4274L84.7121 0.843658H84.777V5.40979H88.6037V1.4274L89.836 0.843658H89.9009V10.5726L88.6686 11.1564H88.6037V6.59024H84.777V10.5726L83.5446 11.1564H83.4798Z" fill="white"/>
-            <path d="M96.4803 11.1564V4.21637C96.4803 3.28239 96.7721 2.51488 97.3559 1.91385C97.9699 1.28687 98.7698 0.973378 99.7557 0.973378C100.724 0.973378 101.524 1.28687 102.156 1.91385C102.739 2.49326 103.031 3.26077 103.031 4.21637V10.5726L101.799 11.1564H101.734V6.59024H97.7775V10.5726L96.5451 11.1564H96.4803ZM97.7775 5.40979H101.734V4.21637C101.734 3.63695 101.578 3.1678 101.267 2.80891C100.882 2.36354 100.378 2.14085 99.7557 2.14085C99.133 2.14085 98.6293 2.36354 98.2445 2.80891C97.9331 3.1678 97.7775 3.63695 97.7775 4.21637V5.40979Z" fill="white"/>
-            <path d="M109.61 11.1564V1.4274L110.298 1.1031H112.756C113.742 1.1031 114.542 1.41659 115.156 2.04357C115.74 2.64028 116.032 3.40778 116.032 4.34609C116.032 5.28872 115.74 6.05623 115.156 6.64861C114.81 6.99886 114.406 7.25181 113.943 7.40747L116.187 10.618L115.046 11.1564H114.981L112.484 7.58908H110.908V10.5726L109.675 11.1564H109.61ZM110.908 6.4216H112.756C113.323 6.4216 113.826 6.19892 114.267 5.75355C114.579 5.4379 114.734 4.96874 114.734 4.34609C114.734 3.76667 114.579 3.29752 114.267 2.93863C113.883 2.49326 113.379 2.27057 112.756 2.27057H110.908V6.4216Z" fill="white"/>
-            <path d="M122.442 11.1564V1.4274L123.675 0.843658H123.74V10.5726L122.507 11.1564H122.442Z" fill="white"/>
-            <path d="M130.319 11.1564V4.21637C130.319 3.28239 130.611 2.51488 131.195 1.91385C131.809 1.28687 132.608 0.973378 133.594 0.973378C134.567 0.973378 135.367 1.28687 135.994 1.91385C136.578 2.49326 136.87 3.26077 136.87 4.21637V10.5726L135.637 11.1564H135.573V4.21637C135.573 3.63695 135.417 3.1678 135.106 2.80891C134.721 2.36354 134.217 2.14085 133.594 2.14085C132.972 2.14085 132.468 2.36354 132.083 2.80891C131.772 3.1678 131.616 3.63695 131.616 4.21637V10.5726L130.384 11.1564H130.319Z" fill="white"/>
-            <path d="M150 5.40979V7.78366C150 8.72196 149.708 9.48947 149.124 10.0862C148.51 10.7132 147.71 11.0267 146.725 11.0267C145.739 11.0267 144.939 10.7132 144.325 10.0862C143.741 9.48947 143.449 8.72196 143.449 7.78366V4.21637C143.449 3.27806 143.741 2.51056 144.325 1.91385C144.939 1.28687 145.739 0.973378 146.725 0.973378C147.745 0.973378 148.545 1.28687 149.124 1.91385C149.708 2.54082 150 3.26509 150 4.08665L148.768 4.67039H148.703V4.21637C148.703 3.63695 148.547 3.1678 148.236 2.80891C147.851 2.36354 147.347 2.14085 146.725 2.14085C146.102 2.14085 145.598 2.36354 145.213 2.80891C144.902 3.1678 144.746 3.63695 144.746 4.21637V7.78366C144.746 8.36307 144.902 8.83223 145.213 9.19112C145.598 9.63649 146.102 9.85917 146.725 9.85917C147.347 9.85917 147.851 9.63649 148.236 9.19112C148.547 8.83223 148.703 8.40631 148.703 7.91338V6.59024H146.446V6.52538L146.971 5.40979H150Z" fill="white"/>
-        </svg>
-
-        <nav class="page-header__nav page-nav">
-            <div class="content-wrapper">
-                <ul class="page-nav__list">
-                    <li class="page-nav__item"><a class="page-nav__link" href="#">Как это работает</a></li>
-                    <li class="page-nav__item"><a class="page-nav__link" href="#">Квартиры</a></li>
-                    <li class="page-nav__item"><a class="page-nav__link" href="#">Что есть в квартирах</a></li>
-                    <li class="page-nav__item"><a class="page-nav__link" href="#">Отзывы</a></li>
-                    <li class="page-nav__item"><a class="page-nav__link" href="#">Функции приложения</a></li>
-                    <li class="page-nav__item"><a class="page-nav__link" href="#">Вопросы и ответы</a></li>
-                    <li class="page-nav__item"><a class="page-nav__link" href="#">Помощь</a></li>
-                </ul>
-                @@include('html-blocks/_btn-list.html')
-            </div>
-
-        </nav>
-        <button class="page-header__burger"><span class="visually-hidden">Показать навигацию</span></button>
-    </header>
-    <main>
-        <section class="description">
-            <div class="description__img">
-                <img src="/img/content/app-start.png" alt="">
-            </div>
-            <div class="content-wrapper">
-                <h1 class="description__title">Бесконтактная аренда жилья в вашем смартфоне</h1>
-                <p class="description__text">Получите доступ к бесконтактной аренде квартир в 9 городах России</p>
-                @@include('html-blocks/_btn-list.html')
-            </div>
-        </section>
-        <section class="how-it-works section">
-            <div class="content-wrapper">
-                <h2 class="section__title">Как это работает</h2>
-                <ul class="how-it-works__step-list">
-                    <li class="how-it-works__step">
-                        <h3>Установите приложение на&nbsp;смартфон</h3>
-                    </li>
-                    <li class="how-it-works__step">
-                        <h3>Выберите квартиру и оплатите аренду на&nbsp;нужные даты&nbsp;и время</h3>
-                    </li>
-                    <li class="how-it-works__step">
-                        <h3>В выбранную дату наберите номер&nbsp;квартиры на&nbsp;домофоне и&nbsp;на&nbsp;смартфоне нажмите кнопку Открыть домофон.</h3>
-                        <p>Кнопка сработает также, как если бы кто-то открыл вам домофон из квартиры</p>
-                    </li>
-                    <li class="how-it-works__step">
-                        <h3>Когда подойдете к квартире нажмите кнопку Открыть квартиру</h3>
-                        <p>Откроется электронный замок, который стоит в каждой квартире</p>
-                        <p>На случай отключения электричества мы предусмотрели резервный источник питания</p>
-                    </li>
-                    <li class="how-it-works__step">
-                        <h3>Когда вам нужно будет куда-то уйти, просто нажмите на&nbsp;кнопку Закрыть квартиру</h3>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="flats section">
-            <h2 class="section__title">Вы можете въехать сюда уже сегодня</h2>
-            <div class="flats__list-container">
-                <ul class="flats__list"></ul>
-            </div>
-
-            @@include('html-blocks/_btn-list.html')
-
-        </section>
-        <section class="flat-features section content-wrapper">
-            <h2 class="section__title">В&nbsp;каждой квартире есть wi-fi и&nbsp;минибар</h2>
-            <p>А еще стиральная машина, фен, кровать с&nbsp;белоснежным бельем и&nbsp;кухня.</p>
-            <p>Также при подборе вы можете выбрать класс квартиры, количество комнат и посмотреть, что еще есть&nbsp;в&nbsp;квартире.</p>
-        </section>
-        <section class="reviews section">
-            <div class="content-wrapper">
-                <h2 class="section__title">Отзывы тех, кто уже воспользовался сервисом</h2>
-            </div>
-            <div class="reviews__list-container">
-                <ul class="reviews__list">
-                    @@include('html-blocks/_review.html')
-                    @@include('html-blocks/_review.html')
-                    @@include('html-blocks/_review.html')
-                </ul>
-            </div>
-            
-        </section>
-        <section class="features section dn">
-            <h2 class="section__title">Что еще можно делать в&nbsp;приложении?</h2>
-            <ul class="features__list">
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Добавлять квартиры в избранное</span>
-                    </label>
-                </li>
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Смотреть историю заказов</span>
-                    </label>
-                </li>
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Скачивать документы, подтверждающие оплату</span>
-                    </label>
-                </li>
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Добавлять несколько карт для оплаты</span>
-                    </label>
-                </li>
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Читать новости проекта</span>
-                    </label>
-                </li>
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Добавлять информацию о поломках</span>
-                    </label>
-                </li>
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Связаться с техподдержкой</span>
-                    </label>
-                </li>
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Оставить отзыв о квартире</span>
-                    </label>
-                </li>
-                <li class="features__item">
-                    <img src="" alt="">
-                    <label>
-                        <input type="radio" name="features">
-                        <span>Смотреть отзывы других пользователей</span>
-                    </label>
-                </li>
-
-            </ul>
-            @@include('html-blocks/_btn-list.html')
-        </section>
-        <section class="faq section dn">
-            <h2 class="section__title">Часто задаваемые вопросы</h2>
-            <ul class="faq__list">
-                <li>
-                    <h3>Как отменить аренду?</h3>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                </li>
-                <li>
-                    <h3>Как отменить аренду?</h3>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                </li>
-            </ul>
-        </section>
-        <section class="cta section dn">
-            <h2 class="section__title">Установите приложение</h2>
-            <p>Также есть приложение на Android</p>
-            @@include('html-blocks/_btn-list.html')
-        </section>
-        <section class="support section dn">
-            <ul>
-<!--                todo: поставить правильный номер телефона-->
-                <li><a class="support__btn--phone" href="tel:">+ 8 800 123 12 12</a></li>
-                <li><a class="support__btn--whatsapp" href="https://wa.me/79141507777">Чат в WhatsApp</a></li>
-                <li><a class="support__btn--email" href="mailto:support@apartsharing.com">support@apartsharing.com</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer class="page-footer dn">
-        <p>ИП Слободянюк Данил Андреевич <br>ИНН: 253102220449 <br>ОГРНИП: 319272400058541</p>
-        <div>
-            <a class="page-footer__link" href="/legal">Политика обработки персональных данных </a>
-            <a href="">Пользовательское соглашение</a>
-        </div>
-    </footer>
-    <script src="/js/bundle.js"></script>
+<header class="page-header">
+  <svg width="150" height="12" viewBox="0 0 150 12" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M0 11.1564V4.21637C0 3.28239 0.291869 2.51488 0.875608 1.91385C1.48961 1.28687 2.28955 0.973378 3.27542 0.973378C4.24399 0.973378 5.04393 1.28687 5.67523 1.91385C6.25897 2.49326 6.55084 3.26077 6.55084 4.21637V10.5726L5.31851 11.1564H5.25365V6.59024H1.2972V10.5726L0.0648598 11.1564H0ZM1.2972 5.40979H5.25365V4.21637C5.25365 3.63695 5.09798 3.1678 4.78665 2.80891C4.40182 2.36354 3.89808 2.14085 3.27542 2.14085C2.65277 2.14085 2.14902 2.36354 1.76419 2.80891C1.45286 3.1678 1.2972 3.63695 1.2972 4.21637V5.40979Z"
+      fill="white"/>
+    <path
+      d="M14.4274 6.4216H16.2759C16.8424 6.4216 17.3461 6.19892 17.7872 5.75355C18.0985 5.4379 18.2541 4.96874 18.2541 4.34609C18.2541 3.76667 18.0985 3.29752 17.7872 2.93863C17.4023 2.49326 16.8986 2.27057 16.2759 2.27057H14.4274V6.4216ZM13.1302 11.1564V1.4274L13.8177 1.1031H16.2759C17.2618 1.1031 18.0617 1.41659 18.6757 2.04357C19.2595 2.64028 19.5513 3.40778 19.5513 4.34609C19.5513 5.28872 19.2595 6.05623 18.6757 6.64861C18.0574 7.27559 17.2575 7.58908 16.2759 7.58908H14.4274V10.5726L13.1951 11.1564H13.1302Z"
+      fill="white"/>
+    <path
+      d="M25.4821 11.1564V4.21637C25.4821 3.28239 25.774 2.51488 26.3577 1.91385C26.9717 1.28687 27.7717 0.973378 28.7575 0.973378C29.7261 0.973378 30.5261 1.28687 31.1574 1.91385C31.7411 2.49326 32.033 3.26077 32.033 4.21637V10.5726L30.8006 11.1564H30.7358V6.59024H26.7793V10.5726L25.547 11.1564H25.4821ZM26.7793 5.40979H30.7358V4.21637C30.7358 3.63695 30.5801 3.1678 30.2688 2.80891C29.8839 2.36354 29.3802 2.14085 28.7575 2.14085C28.1349 2.14085 27.6311 2.36354 27.2463 2.80891C26.935 3.1678 26.7793 3.63695 26.7793 4.21637V5.40979Z"
+      fill="white"/>
+    <path
+      d="M38.6123 11.1564V1.4274L39.2999 1.1031H41.758C42.7439 1.1031 43.5439 1.41659 44.1579 2.04357C44.7416 2.64028 45.0335 3.40778 45.0335 4.34609C45.0335 5.28872 44.7416 6.05623 44.1579 6.64861C43.8119 6.99886 43.4076 7.25181 42.945 7.40747L45.1891 10.618L44.0476 11.1564H43.9827L41.4856 7.58908H39.9095V10.5726L38.6772 11.1564H38.6123ZM39.9095 6.4216H41.758C42.3245 6.4216 42.8282 6.19892 43.2693 5.75355C43.5806 5.4379 43.7363 4.96874 43.7363 4.34609C43.7363 3.76667 43.5806 3.29752 43.2693 2.93863C42.8844 2.49326 42.3807 2.27057 41.758 2.27057H39.9095V6.4216Z"
+      fill="white"/>
+    <path
+      d="M52.3069 11.1564V2.28355H49.5308V2.21869L50.0562 1.1031H56.38V1.16796L55.8547 2.28355H53.604V10.5726L52.3717 11.1564H52.3069Z"
+      fill="white"/>
+    <path
+      d="M77.1534 7.83555C77.1534 8.71764 76.8636 9.46785 76.2842 10.0862C75.6918 10.7132 74.8919 11.0267 73.8844 11.0267C72.8769 11.0267 72.077 10.7132 71.4846 10.0862C70.9009 9.46785 70.609 8.74358 70.609 7.91338L71.8413 7.32964H71.9062V7.86149C71.9062 8.38902 72.0619 8.83223 72.3732 9.19112C72.758 9.63649 73.2618 9.85917 73.8844 9.85917C74.5027 9.85917 75.0065 9.63649 75.3956 9.19112C75.7027 8.84087 75.8562 8.39334 75.8562 7.84852C75.8562 7.33396 75.7308 6.92967 75.48 6.63564C75.134 6.22919 74.6022 6.02596 73.8844 6.02596C73.0975 6.02596 72.4164 5.76652 71.8413 5.24764C71.4089 4.85848 71.1927 4.2942 71.1927 3.5548C71.1927 2.68568 71.4608 2.03276 71.997 1.59603C72.5072 1.18093 73.1364 0.973378 73.8844 0.973378C74.6325 0.973378 75.2616 1.18093 75.7718 1.59603C76.308 2.03276 76.5761 2.63163 76.5761 3.39265L75.3438 3.97639H75.2789V3.45751C75.2789 2.96457 75.1384 2.59704 74.8573 2.35489C74.5849 2.11707 74.2606 1.99816 73.8844 1.99816C73.465 1.99816 73.1277 2.13004 72.8726 2.39381C72.6175 2.65757 72.4899 3.01214 72.4899 3.45751C72.4899 3.88558 72.5872 4.20772 72.7818 4.42392C73.0412 4.71363 73.4088 4.85848 73.8844 4.85848C74.9308 4.85848 75.7308 5.10495 76.2842 5.59788C76.8636 6.11244 77.1534 6.85833 77.1534 7.83555Z"
+      fill="white"/>
+    <path
+      d="M83.4798 11.1564V1.4274L84.7121 0.843658H84.777V5.40979H88.6037V1.4274L89.836 0.843658H89.9009V10.5726L88.6686 11.1564H88.6037V6.59024H84.777V10.5726L83.5446 11.1564H83.4798Z"
+      fill="white"/>
+    <path
+      d="M96.4803 11.1564V4.21637C96.4803 3.28239 96.7721 2.51488 97.3559 1.91385C97.9699 1.28687 98.7698 0.973378 99.7557 0.973378C100.724 0.973378 101.524 1.28687 102.156 1.91385C102.739 2.49326 103.031 3.26077 103.031 4.21637V10.5726L101.799 11.1564H101.734V6.59024H97.7775V10.5726L96.5451 11.1564H96.4803ZM97.7775 5.40979H101.734V4.21637C101.734 3.63695 101.578 3.1678 101.267 2.80891C100.882 2.36354 100.378 2.14085 99.7557 2.14085C99.133 2.14085 98.6293 2.36354 98.2445 2.80891C97.9331 3.1678 97.7775 3.63695 97.7775 4.21637V5.40979Z"
+      fill="white"/>
+    <path
+      d="M109.61 11.1564V1.4274L110.298 1.1031H112.756C113.742 1.1031 114.542 1.41659 115.156 2.04357C115.74 2.64028 116.032 3.40778 116.032 4.34609C116.032 5.28872 115.74 6.05623 115.156 6.64861C114.81 6.99886 114.406 7.25181 113.943 7.40747L116.187 10.618L115.046 11.1564H114.981L112.484 7.58908H110.908V10.5726L109.675 11.1564H109.61ZM110.908 6.4216H112.756C113.323 6.4216 113.826 6.19892 114.267 5.75355C114.579 5.4379 114.734 4.96874 114.734 4.34609C114.734 3.76667 114.579 3.29752 114.267 2.93863C113.883 2.49326 113.379 2.27057 112.756 2.27057H110.908V6.4216Z"
+      fill="white"/>
+    <path d="M122.442 11.1564V1.4274L123.675 0.843658H123.74V10.5726L122.507 11.1564H122.442Z" fill="white"/>
+    <path
+      d="M130.319 11.1564V4.21637C130.319 3.28239 130.611 2.51488 131.195 1.91385C131.809 1.28687 132.608 0.973378 133.594 0.973378C134.567 0.973378 135.367 1.28687 135.994 1.91385C136.578 2.49326 136.87 3.26077 136.87 4.21637V10.5726L135.637 11.1564H135.573V4.21637C135.573 3.63695 135.417 3.1678 135.106 2.80891C134.721 2.36354 134.217 2.14085 133.594 2.14085C132.972 2.14085 132.468 2.36354 132.083 2.80891C131.772 3.1678 131.616 3.63695 131.616 4.21637V10.5726L130.384 11.1564H130.319Z"
+      fill="white"/>
+    <path
+      d="M150 5.40979V7.78366C150 8.72196 149.708 9.48947 149.124 10.0862C148.51 10.7132 147.71 11.0267 146.725 11.0267C145.739 11.0267 144.939 10.7132 144.325 10.0862C143.741 9.48947 143.449 8.72196 143.449 7.78366V4.21637C143.449 3.27806 143.741 2.51056 144.325 1.91385C144.939 1.28687 145.739 0.973378 146.725 0.973378C147.745 0.973378 148.545 1.28687 149.124 1.91385C149.708 2.54082 150 3.26509 150 4.08665L148.768 4.67039H148.703V4.21637C148.703 3.63695 148.547 3.1678 148.236 2.80891C147.851 2.36354 147.347 2.14085 146.725 2.14085C146.102 2.14085 145.598 2.36354 145.213 2.80891C144.902 3.1678 144.746 3.63695 144.746 4.21637V7.78366C144.746 8.36307 144.902 8.83223 145.213 9.19112C145.598 9.63649 146.102 9.85917 146.725 9.85917C147.347 9.85917 147.851 9.63649 148.236 9.19112C148.547 8.83223 148.703 8.40631 148.703 7.91338V6.59024H146.446V6.52538L146.971 5.40979H150Z"
+      fill="white"/>
+  </svg>
+  
+  <nav class="page-header__nav page-nav">
+    <div class="content-wrapper">
+      <ul class="page-nav__list">
+        <li class="page-nav__item"><a class="page-nav__link" href="#">Как это работает</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#">Квартиры</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#">Что есть в квартирах</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#">Отзывы</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#">Функции приложения</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#">Вопросы и ответы</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#">Помощь</a></li>
+      </ul>
+      @@include('html-blocks/_btn-list.html')
+    </div>
+  
+  </nav>
+  <button class="page-header__burger"><span class="visually-hidden">Показать навигацию</span></button>
+</header>
+<main>
+  <section class="description">
+    <div class="description__img">
+      <img src="/img/content/app-start.png" alt="">
+    </div>
+    <div class="content-wrapper">
+      <h1 class="description__title">Бесконтактная аренда жилья в вашем смартфоне</h1>
+      <p class="description__text">Получите доступ к бесконтактной аренде квартир в 9 городах России</p>
+      @@include('html-blocks/_btn-list.html')
+    </div>
+  </section>
+  <section class="how-it-works section">
+    <div class="content-wrapper">
+      <h2 class="section__title">Как это работает</h2>
+      <ul class="how-it-works__step-list">
+        <li class="how-it-works__step">
+          <h3>Установите приложение на&nbsp;смартфон</h3>
+        </li>
+        <li class="how-it-works__step">
+          <h3>Выберите квартиру и оплатите аренду на&nbsp;нужные даты&nbsp;и время</h3>
+        </li>
+        <li class="how-it-works__step">
+          <h3>В выбранную дату наберите номер&nbsp;квартиры на&nbsp;домофоне и&nbsp;на&nbsp;смартфоне нажмите кнопку
+            Открыть домофон.</h3>
+          <p>Кнопка сработает также, как если бы кто-то открыл вам домофон из квартиры</p>
+        </li>
+        <li class="how-it-works__step">
+          <h3>Когда подойдете к квартире нажмите кнопку Открыть квартиру</h3>
+          <p>Откроется электронный замок, который стоит в каждой квартире</p>
+          <p>На случай отключения электричества мы предусмотрели резервный источник питания</p>
+        </li>
+        <li class="how-it-works__step">
+          <h3>Когда вам нужно будет куда-то уйти, просто нажмите на&nbsp;кнопку Закрыть квартиру</h3>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="flats section">
+    <h2 class="section__title">Вы можете въехать сюда уже сегодня</h2>
+    <div class="flats__list-container">
+      <ul class="flats__list"></ul>
+    </div>
+    
+    @@include('html-blocks/_btn-list.html')
+  
+  </section>
+  <section class="flat-features section content-wrapper">
+    <h2 class="section__title">В&nbsp;каждой квартире есть wi-fi и&nbsp;минибар</h2>
+    <p>А еще стиральная машина, фен, кровать с&nbsp;белоснежным бельем и&nbsp;кухня.</p>
+    <p>Также при подборе вы можете выбрать класс квартиры, количество комнат и посмотреть, что еще есть&nbsp;в&nbsp;квартире.</p>
+  </section>
+  <section class="reviews section">
+    <div class="content-wrapper">
+      <h2 class="section__title">Отзывы тех, кто уже воспользовался сервисом</h2>
+    </div>
+    <div class="reviews__list-container">
+      <ul class="reviews__list">
+        @@include('html-blocks/_review.html')
+        @@include('html-blocks/_review.html')
+        @@include('html-blocks/_review.html')
+      </ul>
+    </div>
+  
+  </section>
+  <section class="features section slider">
+    <h2 class="section__title">Что еще можно делать в&nbsp;приложении?</h2>
+    <div class="slider__list-container feature__list-container">
+      <ul class="features__list slider__list">
+        <li class="features__item">
+          <img src="/img/content/features/favorites.png" alt="">
+          <span class="content-wrapper">Добавлять квартиры<br> в&nbsp;избранное</span>
+        </li>
+        <li class="features__item">
+          <img src="/img/content/features/history.png" alt="">
+          <span>Смотреть<br> историю заказов</span>
+        </li>
+        <li class="features__item">
+          <img src="/img/content/features/docs.png" alt="">
+          <span>Скачивать документы,<br> подтверждающие оплату</span>
+        </li>
+        <li class="features__item">
+          <img src="/img/content/features/cards.png" alt="">
+          <span>Добавлять несколько карт<br> для оплаты</span>
+        </li>
+        <li class="features__item">
+          <img src="img/content/features/news.png" alt="">
+          <span>Читать<br> новости проекта</span>
+        </li>
+        <li class="features__item">
+          <img src="/img/content/features/brakes.png" alt="">
+          <span>Добавлять информацию<br> о поломках</span>
+        </li>
+        <li class="features__item">
+          <img src="/img/content/features/support.png" alt="">
+          <span>Связываться<br> с техподдержкой</span>
+        </li>
+        <li class="features__item">
+          <img src="/img/content/features/feedback.png" alt="">
+          <span>Оставлять отзывы <br> о квартирах</span>
+        </li>
+        <li class="features__item">
+          <img src="/img/content/features/reviews.png" alt="">
+          <span>Смотреть отзывы<br> других пользователей</span>
+        </li>
+      </ul>
+      <ul class="slider__controls">
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="0" checked>
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="1">
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="2">
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="3">
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="4">
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="5">
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="6">
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="7">
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input class="visually-hidden" type="radio" name="feature" value="8">
+            <span class="slider__radio-indicator"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+    
+    @@include('html-blocks/_btn-list.html')
+  </section>
+  <section class="faq section dn">
+    <h2 class="section__title">Часто задаваемые вопросы</h2>
+    <ul class="faq__list">
+      <li>
+        <h3>Как отменить аренду?</h3>
+        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim
+          velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+      </li>
+      <li>
+        <h3>Как отменить аренду?</h3>
+        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim
+          velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cta section dn">
+    <h2 class="section__title">Установите приложение</h2>
+    <p>Также есть приложение на Android</p>
+    @@include('html-blocks/_btn-list.html')
+  </section>
+  <section class="support section dn">
+    <ul>
+      <!--                todo: поставить правильный номер телефона-->
+      <li><a class="support__btn--phone" href="tel:">+ 8 800 123 12 12</a></li>
+      <li><a class="support__btn--whatsapp" href="https://wa.me/79141507777">Чат в WhatsApp</a></li>
+      <li><a class="support__btn--email" href="mailto:support@apartsharing.com">support@apartsharing.com</a></li>
+    </ul>
+  </section>
+</main>
+<footer class="page-footer dn">
+  <p>ИП Слободянюк Данил Андреевич <br>ИНН: 253102220449 <br>ОГРНИП: 319272400058541</p>
+  <div>
+    <a class="page-footer__link" href="/legal">Политика обработки персональных данных </a>
+    <a href="">Пользовательское соглашение</a>
+  </div>
+</footer>
+<script src="/js/bundle.js"></script>
 </body>
 </html>
