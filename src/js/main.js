@@ -5,6 +5,7 @@ import {createFlatTemplate} from "./views/flat";
 import {generateTaskData} from "./mocks/flat";
 import {setFlatListPosition} from "./components/flat-list";
 import {setSlider} from "./components/slider";
+import {setAccordions} from "./components/accordion";
 
 const FLAT_COUNT = 3;
 function render(parentElement, place, template,) {
@@ -14,6 +15,7 @@ function render(parentElement, place, template,) {
 setBtnsList();
 setBurger();
 setPageHeader();
+setAccordions();
 
 
 

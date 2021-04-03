@@ -230,18 +230,24 @@
     
     @@include('html-blocks/_btn-list.html')
   </section>
-  <section class="faq section dn">
+  <section class="faq section content-wrapper">
     <h2 class="section__title">Часто задаваемые вопросы</h2>
-    <ul class="faq__list">
-      <li>
-        <h3>Как отменить аренду?</h3>
-        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim
-          velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+    <ul class="faq__list accordion">
+      <li class="accordion__item">
+        <button class="accordion__toggle">Как отменить аренду?</button>
+        <div class="accordion__description">
+          <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim
+            velit mollit.</p>
+          <p>Exercitation veniam consequat sunt nostrud amet.</p>
+        </div>
       </li>
-      <li>
-        <h3>Как отменить аренду?</h3>
-        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim
-          velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+      <li class="accordion__item">
+        <button class="accordion__toggle">Как отменить аренду?</button>
+        <div class="accordion__description">
+          <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim
+            velit mollit.</p>
+          <p>Exercitation veniam consequat sunt nostrud amet.</p>
+        </div>
       </li>
     </ul>
   </section>
