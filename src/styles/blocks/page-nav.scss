@@ -30,6 +30,9 @@
   background-image: url("/img/decoration/balloon.svg");
   background-repeat: no-repeat;
   animation: balloon 2s ease-in-out both alternate infinite;
+  @media screen and (min-width: $iphone11) {
+    top: 100px;
+  }
 }
 
 .page-nav .content-wrapper {

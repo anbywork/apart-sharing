@@ -5,6 +5,10 @@
   border-radius: 12px;
   background-color: $white;
   box-shadow: 0px 0px 12px rgba(86, 99, 246, 0.16);
+  @media screen and (min-width: $iphone11) {
+    width: 295px;
+    min-width: 295px;
+  }
 }
 
 .flat + .flat {

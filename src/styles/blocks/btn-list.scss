@@ -2,6 +2,9 @@
   @include reset-list;
   margin: 0 auto;
   width: 240px;
+  @media screen and (min-width: $iphone11) {
+    width: 295px;
+  }
 }
 
 .btn-list li + li {

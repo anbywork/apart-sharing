@@ -1,5 +1,6 @@
 .description {
   padding-bottom: 34px;
+  min-height: 100vh;
 }
 
 .description__img {
@@ -18,12 +19,18 @@
     width: 170px;
     transform: translateX(-50%);
   }
+  @media screen and (min-width: $iphone11) {
+    height: 452px;
+  }
 }
 
 .description .content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (min-width: $iphone11) {
+    align-items: flex-start;
+  }
 }
 
 .description__title {
@@ -35,6 +42,9 @@
   font-size: 25px;
   line-height: 29px;
   color: $dark;
+  @media screen and (min-width: $iphone11) {
+    text-align: left;
+  }
 }
 
 .description__text {
@@ -44,4 +54,7 @@
   font-size: 16px;
   line-height: 25px;
   text-align: center;
+  @media screen and (min-width: $iphone11) {
+    text-align: left;
+  }
 }
