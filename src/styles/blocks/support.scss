@@ -1,0 +1,51 @@
+.support__list {
+  @include reset-list;
+  
+  & li + li {
+    margin-top: 4px;
+  }
+}
+
+
+
+.support__btn {
+  position: relative;
+  display: flex;
+  padding: 15px 12px 15px 54px;
+  height: 54px;
+  background: rgba(86, 99, 246, 0.05);
+  border-radius: 4px;
+  color: $dark;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: $blue;
+  }
+  
+  &::before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    left: 12px;
+    background-image: url("/img/decoration/sprite.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.support__btn--phone::before {
+  background-position: -105px 0;
+}
+
+.support__btn--whatsapp::before {
+  background-position: -140px 0;
+}
+
+.support__btn--email::before {
+  background-position: -175px 0;
+}
