@@ -1,0 +1,26 @@
+.footer {
+  padding: 60px 0;
+  background-color: $light-grey;
+  border-top: 1px solid rgba($dark, 0.1);
+}
+
+.footer__legal {
+  @include reset;
+  margin-bottom: 44px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.footer__docs {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.footer__link {
+  color: $dark70;
+}
+
