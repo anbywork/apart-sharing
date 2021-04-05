@@ -38,6 +38,9 @@
   z-index: 10;
   height: 60px;
   transition: background-color 300ms ease-in-out;
+  @media screen and (min-width: $ipad) {
+    padding: 0 40px;
+  }
 }
 
 .page-header--white {
@@ -53,6 +56,10 @@
   background-color: transparent;
   width: 30px;
   height: 30px;
+  
+  @media screen and (min-width: $ipad) {
+    right: 40px;
+  }
   &:hover,
   &:focus {
     // todo: доработать поведение на десктопе
@@ -100,6 +107,10 @@
   left: 0;
   display: none;
   transform: translateX(110%);
+  @media screen and (min-width: $ipad) {
+    left: auto;
+    right: 0;
+  }
 }
 
 .page-header__nav--opened {

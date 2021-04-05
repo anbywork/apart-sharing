@@ -6,6 +6,9 @@
   background-position: bottom;
   color: $white;
   overflow-x: hidden;
+  @media screen and (min-width: $ipad) {
+    color: $dark;
+  }
 }
 
 //balloon
@@ -19,6 +22,9 @@
   background-image: url("/img/decoration/how-it-works/cloud.svg");
   background-repeat: no-repeat;
   animation: clouds 5s linear both alternate infinite;
+  @media screen and (min-width: $ipad) {
+    background-repeat: repeat-x;
+  }
 }
 .how-it-works::after {
   position: absolute;
@@ -43,6 +49,11 @@
 .how-it-works__step-list {
   @include reset-list;
   padding-left: 15px;
+  @media screen and (min-width: $ipad) {
+    background-color: $white;
+    border-radius: 12px;
+    padding: 40px;
+  }
 }
 
 .how-it-works__step {
@@ -50,9 +61,22 @@
   padding: 16px 16px 16px 30px;
   border: 1px solid rgba($white, 0.5);
   border-radius: 12px;
+  
+  @media screen and (min-width: $ipad) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    padding-left: 64px;
+    min-height: 40px;
+  }
 
   & + .how-it-works__step {
     margin-top: 20px;
+    @media screen and (min-width: $ipad) {
+      margin-top: 32px;
+    }
   }
 
   &::before {
@@ -73,6 +97,17 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
+    @media screen and (min-width: $ipad) {
+      
+      width: 40px;
+      height: 40px;
+      left: 0;
+      background-color: $blue;
+      color: $white;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 18px;
+    }
   }
 
   &:nth-child(1)::before {
@@ -108,5 +143,9 @@
   font-size: 14px;
   line-height: 20px;
   color: rgba($white, 0.7);
+  @media screen and (min-width: $ipad) {
+    color: $dark70;
+  }
+  
 }
 

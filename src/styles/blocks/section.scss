@@ -11,4 +11,10 @@
   line-height: 29px;
   text-align: center;
   color: $dark;
+  @media screen and (min-width: $ipad) {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 41px;
+  }
+  
 }

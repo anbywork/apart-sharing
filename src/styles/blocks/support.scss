@@ -1,9 +1,43 @@
+.support {
+  @media screen and (min-width: $ipad) {
+    background-color: $light-grey;
+  }
+  
+  &.section {
+    @media screen and (min-width: $ipad) {
+      padding: 40px;
+    }
+  }
+}
+
+.support .section__title {
+  @media screen and (min-width: $ipad) {
+    margin-bottom: 20px;
+  }
+}
+
 .support__list {
   @include reset-list;
+  @media screen and (min-width: $ipad) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+  & li {
+    width: 100%;
+    flex-shrink: 1;
+  }
   
   & li + li {
     margin-top: 4px;
+    @media screen and (min-width: $ipad) {
+      margin-top: 0;
+      margin-left: 20px;
+    }
   }
+  
 }
 
 
@@ -19,6 +53,9 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
+  @media screen and (min-width: $ipad) {
+    background-color: $white;
+  }
   
   &:focus,
   &:hover {

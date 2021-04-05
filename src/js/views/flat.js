@@ -4,10 +4,10 @@ export const createFlatTemplate = (flat, flatIndex) => {
   }
   const {images, rating, reviewsCount, city, street, home} = flat;
 
-  const generateImages = () => {
+  const getImages = () => {
     let imagesHTML = '';
     for (let i = 0; i < images.length; i++) {
-      imagesHTML += `<li><img src="img/content/${images[i]['1x']}" srcset="/img/content/${images[i]['2x']} 2x" alt=""></li>`
+      imagesHTML += `<li><img class="flat__img" src="img/content/${images[i]['1x']}" srcset="/img/content/${images[i]['2x']} 2x" alt=""></li>`
     }
     return imagesHTML;
   }
@@ -33,7 +33,7 @@ export const createFlatTemplate = (flat, flatIndex) => {
             <div class="flat__slider slider">
               <div class="slider__list-container">
                  <ul class="flat-img-slider__list slider__list">
-                    ${generateImages()}
+                    ${getImages()}
                 </ul> 
               </div>
                 <ul class="flat-img-slider__controls slider__controls">

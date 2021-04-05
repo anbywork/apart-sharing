@@ -9,10 +9,21 @@
     width: 295px;
     min-width: 295px;
   }
+  @media screen and (min-width: $ipad) {
+    width: 216px;
+    min-width: 216px;
+  }
 }
+
 
 .flat + .flat {
   margin-left: 16px;
+}
+
+.flat__img {
+  @media screen and (min-width: $ipad) {
+    width: 216px;
+  }
 }
 
 .flat__description {

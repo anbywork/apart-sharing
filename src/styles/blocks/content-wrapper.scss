@@ -5,4 +5,8 @@
     padding-left: 30px;
     padding-right: 30px;
   }
+  @media screen and (min-width: $ipad) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }

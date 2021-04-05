@@ -1,10 +1,48 @@
+.features {
+  width: 100%;
+  min-height: 736px;
+  @media screen and (min-width: $ipad) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
 
+.features .section__title {
+  @media screen and (min-width: $ipad) {
+    text-align: left;
+  }
+  
+}
+
+.features__content {
+  @media screen and (min-width: $ipad) {
+    width: 393px;
+    margin-left: 40px;
+  }
+}
+
+.features .slider__list {
+  @media screen and (min-width: $ipad) {
+    flex-direction: column;
+  }
+}
+
+
+.features__list-container {
+  @media screen and (min-width: $ipad) {
+    overflow: visible;
+  }
+}
 
 .features__list {
   @include reset-list;
   
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: $ipad) {
+    overflow: visible;
+  }
 }
 
 .features__item {
@@ -14,15 +52,35 @@
   min-width: 100%;
   margin-bottom: 20px;
   overflow-x: hidden;
+  @media screen and (min-width: $ipad) {
+    overflow-x: visible;
+    align-items: flex-start;
+  }
 }
 
 .features__item img {
   width: 150px;
   margin-bottom: 20px;
+  box-shadow: 0px 0px 40px rgba(86, 99, 246, 0.16);
+  border-radius: 24px;
+  border: 2px solid $white;
+  @media screen and (min-width: $ipad) {
+    display: none;
+    position: absolute;
+    top: -80px;
+    transform: translate(0);
+    left: 420px;
+    width: 268px;
+    margin-bottom: 0;
+    
+  }
 }
 
 .features__item span {
   text-align: center;
+  @media screen and (min-width: $ipad) {
+    text-align: left;
+  }
 }
 
 .features__item span br {
@@ -38,8 +96,31 @@
   flex-direction: row;
   justify-content: center;
   margin-bottom: 28px;
+  @media screen and (min-width: $ipad) {
+    display: none;
+  }
 }
 
 .features .slider__radio-indicator {
   border: 2px solid $light-blue;
+}
+
+.features__item input[type=radio]:checked {
+  @media screen and (min-width: $ipad) {
+    & ~ span {
+      color: $blue
+    }
+  
+    & ~ img {
+      display: block;
+    }
+  }
+  
+}
+
+.features .btn-list {
+  @media screen and (min-width: $ipad) {
+    margin-top: 60px;
+  }
+  
 }

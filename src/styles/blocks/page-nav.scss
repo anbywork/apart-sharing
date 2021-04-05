@@ -6,6 +6,9 @@
   background: linear-gradient(170.02deg, #3F4785 0%, #5663F6 100%);
   overflow: hidden;
   padding-bottom: 40px;
+  @media screen and (min-width: $ipad) {
+    width: 375px;
+  }
 }
 
 
@@ -16,9 +19,12 @@
   left: 0;
   width: 100%;
   height: 120px;
-  background-image: url("/img/decoration/clouds.svg");
+  background-image: url("/img/decoration/how-it-works/cloud.svg");
   background-repeat: no-repeat;
   animation: clouds 5s linear both alternate infinite;
+  @media screen and (min-width: $ipadpro) {
+    top: 130px;
+  }
 }
 .page-nav::after {
   position: absolute;
@@ -32,6 +38,9 @@
   animation: balloon 2s ease-in-out both alternate infinite;
   @media screen and (min-width: $iphone11) {
     top: 100px;
+  }
+  @media screen and (min-width: $ipadpro) {
+    top: 200px;
   }
 }
 
@@ -48,6 +57,9 @@
 
 .page-nav__item + .page-nav__item {
   margin-top: 16px;
+  @media screen and (min-width: $ipad) {
+    margin-top: 30px;
+  }
 }
 
 .page-nav__link {
@@ -56,6 +68,11 @@
   font-size: 20px;
   line-height: 23px;
   color: $white;
+  @media screen and (min-width: $ipad) {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+  }
   &:focus,
   &:hover {
     color: rgba($white, 0.8);
@@ -64,6 +81,12 @@
 
 .page-nav .btn-list {
   margin-top: 40px;
+  @media screen and (min-width: $ipad) {
+    margin-top: 60px;
+  }
+  @media screen and (min-width: $ipadpro) {
+    margin-top: 200px;
+  }
 }
 
 .page-nav .btn {

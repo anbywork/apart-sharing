@@ -1,24 +1,38 @@
 .cta {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: linear-gradient(170.02deg, #3F4785 0%, #5663F6 100%);
   overflow-x: hidden;
+  @media screen and (min-width: $ipad) {
+    align-items: flex-start;
+  }
   &.section {
     padding-bottom: 175px;
+    @media screen and (min-width: $ipad) {
+      padding: 40px;
+    }
   }
 }
 
 .cta .section__title {
   margin-bottom: 20px;
   color: $white;
+  @media screen and (min-width: $ipad) {
+    margin-bottom: 12px;
+  }
 }
 
 .cta__description {
+  @include reset;
   margin-bottom: 30px;
   font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   color: rgba($white, 0.7);
   text-align: center;
+  
 }
 
 .cta::before {
@@ -28,9 +42,16 @@
   left: 0;
   width: 100%;
   height: 90px;
-  background-image: url("/img/decoration/clouds.svg");
+  background-image: url("/img/decoration/how-it-works/cloud.svg");
   background-repeat: no-repeat;
   animation: clouds 5s linear both alternate infinite;
+  @media screen and (min-width: $ipad) {
+    background-position: top 0 right 0;
+    bottom: 100px;
+    left: auto;
+    right: 20px;
+    width: 390px;
+  }
 }
 .cta::after {
   position: absolute;
@@ -42,4 +63,10 @@
   background-image: url("/img/decoration/balloon.svg");
   background-repeat: no-repeat;
   animation: balloon 2s ease-in-out both alternate infinite;
+  @media screen and (min-width: $ipad) {
+    left: auto;
+    right: 150px;
+    bottom: 40px;
+    width: 56px;
+  }
 }

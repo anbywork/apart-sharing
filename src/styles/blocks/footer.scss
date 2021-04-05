@@ -1,7 +1,14 @@
 .footer {
-  padding: 60px 0;
+  padding: 60px 15px;
   background-color: $light-grey;
   border-top: 1px solid rgba($dark, 0.1);
+  @media screen and (min-width: $ipad) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 40px;
+  }
 }
 
 .footer__legal {
@@ -11,6 +18,10 @@
   font-size: 12px;
   line-height: 22px;
   text-align: center;
+  @media screen and (min-width: $ipad) {
+    text-align: left;
+    margin-bottom: 0;
+  }
 }
 
 .footer__docs {
@@ -20,6 +31,9 @@
   font-size: 12px;
   line-height: 22px;
   text-align: center;
+  @media screen and (min-width: $ipad) {
+    text-align: right;
+  }
 }
 
 .footer__link {

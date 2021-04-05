@@ -5,6 +5,10 @@
   @media screen and (min-width: $iphone11) {
     width: 295px;
   }
+  @media screen and (min-width: $ipad) {
+    margin: 0;
+    width: 240px;
+  }
 }
 
 .btn-list li + li {
