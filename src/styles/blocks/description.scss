@@ -1,4 +1,11 @@
 .description {
+  @media screen and (min-width: $desktop) {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.description__wrapper {
   padding-bottom: 34px;
   min-height: 100vh;
   width: 100%;
@@ -33,6 +40,18 @@
       height: 2914px;
       top: -2726px;
       
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 0;
+    width: 1170px;
+    margin: 0 auto;
+    position: static;
+    &::before {
+      width: 0;
+      height: 0;
+      top: 0;
+    
     }
   }
 }
@@ -79,14 +98,21 @@
       width: 205px;
       height: 205px;
       bottom: -50px;
-      right:- 50px;
+      right: -50px;
       border-radius: 50%;
-      
     }
   }
   @media screen and (min-width: $ipadpro) {
     width: 355px;
     margin-right: 100px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 350px;
+    margin-right: 0;
+    align-items: flex-start;
+    &::after {
+      right: 0px;
+    }
   }
   
   & img {
@@ -102,6 +128,9 @@
       transform: translateX(0);
       width: 100%;
       z-index: 3;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 270px;
     }
   }
 
@@ -123,6 +152,7 @@
   }
   @media screen and (min-width: $ipadpro) {
     padding-left: 40px;
+    width: 410px;
     overflow-x: hidden;
     &::before,
     &::after {
@@ -145,7 +175,10 @@
       bottom: -163px;
     }
   }
-  
+  @media screen and (min-width: $desktop) {
+    width: 580px;
+    padding: 0;
+  }
  
 }
 
@@ -168,6 +201,11 @@
     line-height: 59px;
     margin-bottom: 40px;
   }
+  @media screen and (min-width: $desktop) {
+    font-size: 60px;
+    line-height: 64px;
+  }
+  
 }
 
 .description__text {
@@ -183,6 +221,11 @@
   @media screen and (min-width: $ipad) {
     margin-bottom: 100px;
   }
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
 }
 
 
@@ -192,4 +235,16 @@
     padding-bottom: 20px;
     margin-left: 0;
   }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 0;
+    
+    & li + li {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+  }
 }
+

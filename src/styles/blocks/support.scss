@@ -29,6 +29,10 @@
     align-items: flex-start;
     justify-content: space-between;
   }
+  @media screen and (min-width: $desktop) {
+    width: 670px;
+    margin: 0 auto;
+  }
   
   & li {
     width: 100%;

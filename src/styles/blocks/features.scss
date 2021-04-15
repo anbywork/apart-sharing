@@ -23,6 +23,11 @@
   @media screen and (min-width: $ipadpro) {
     margin-left: 120px;
   }
+  @media screen and (min-width: $desktop) {
+    width: 960px;
+    margin: 0 auto;
+    
+  }
 }
 
 .features .slider__list {
@@ -61,6 +66,10 @@
   }
 }
 
+.features__item label {
+  cursor: pointer;
+}
+
 .features__item img {
   width: 150px;
   margin-bottom: 20px;
@@ -79,6 +88,10 @@
   }
   @media screen and (min-width: $ipadpro) {
     left: 514px;
+  }
+  @media screen and (min-width: $desktop) {
+    left: auto;
+    right: 0;
   }
 }
 

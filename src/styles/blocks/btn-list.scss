@@ -1,16 +1,20 @@
 .btn-list {
   @include reset-list;
   margin: 0 auto;
-  width: 240px;
-  @media screen and (min-width: $iphone11) {
-    width: 295px;
-  }
+  
   @media screen and (min-width: $ipad) {
     margin: 0;
-    width: 240px;
+  }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-direction: row;
   }
 }
 
 .btn-list li + li {
   margin-top: 10px;
+  @media screen and (min-width: $desktop) {
+    margin-top: 0;
+    margin-left: 20px;
+  }
 }

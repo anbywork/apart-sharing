@@ -16,6 +16,10 @@
     @media screen and (min-width: $ipadpro) {
       padding: 40px 120px;
     }
+    @media screen and (min-width: $desktop) {
+      padding-left: calc((100% - 960px) / 2);
+      padding-right: calc((100% - 960px) / 2);
+    }
   }
 }
 
@@ -55,6 +59,9 @@
     right: 20px;
     width: 390px;
   }
+  @media screen and (min-width: $desktop) {
+    right: calc((100% - 960px) / 2);
+  }
 }
 .cta::after {
   position: absolute;
@@ -71,5 +78,8 @@
     right: 150px;
     bottom: 40px;
     width: 56px;
+  }
+  @media screen and (min-width: $desktop) {
+    right: calc((100% - 960px + 300px) / 2);
   }
 }

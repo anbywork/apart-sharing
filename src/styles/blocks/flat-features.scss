@@ -21,6 +21,17 @@
     padding-left: 570px;
     max-width: 370px;
   }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: none;
+    padding-left: calc(50% + 140px);
+    padding-right: calc(50% - 140px - 340px);
+    width: 100%;
+    min-height: 690px;
+  }
   
   &::before {
     position: absolute;
@@ -43,6 +54,10 @@
     }
     @media screen and (min-width: $ipadpro) {
       width: 500px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: calc(50%);
+      background-position: -50%;
     }
     
   }

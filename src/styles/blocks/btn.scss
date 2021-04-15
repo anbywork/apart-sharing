@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     padding: 15px;
+    width: 240px;
     min-height: 56px;
     background-color: $blue;
     box-shadow: inset 4px 4px 4px rgba(255, 255, 255, 0.08);
@@ -19,6 +20,12 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
+    @media screen and (min-width: $iphone11) {
+      width: 295px;
+    }
+    @media screen and (min-width: $ipad) {
+      width: 240px;
+    }
   }
 
   &:hover span,
@@ -35,5 +42,7 @@
 
 }
 
-
+.btn--googleplay span {
+  background-color: $dark;
+}
 

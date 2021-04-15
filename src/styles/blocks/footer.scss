@@ -9,6 +9,10 @@
     align-items: flex-start;
     padding: 30px 40px;
   }
+  @media screen and (min-width: $desktop) {
+    padding: 30px calc((100% - 1170px) / 2);
+    margin: 0 auto;
+  }
 }
 
 .footer__legal {

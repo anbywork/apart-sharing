@@ -11,6 +11,13 @@
   }
 }
 
+.page-header__logo path {
+  fill: white;
+  @media screen and (min-width: $desktop) {
+    fill: $dark;
+  }
+}
+
 
 .page-nav::before {
   position: absolute;
@@ -80,6 +87,8 @@
     font-size: 25px;
     line-height: 29px;
   }
+  
+  
   &:focus,
   &:hover {
     color: rgba($white, 0.8);
@@ -92,7 +101,16 @@
     margin-top: 60px;
   }
   @media screen and (min-width: $ipadpro) {
-    margin-top: 200px;
+    margin-top: 100px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 60px;
+    flex-direction: column;
+    
+    & li + li {
+      margin-top: 20px;
+      margin-left: 0;
+    }
   }
 }
 

@@ -14,6 +14,9 @@
   @media screen and (min-width: $ipadpro) {
     width: 460px;
   }
+  @media screen and (min-width: $desktop) {
+    width: auto;
+  }
 }
 
 .flats__list {
