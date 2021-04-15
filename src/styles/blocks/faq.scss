@@ -1,3 +1,27 @@
 .faq {
   background-color: $light-grey;
+  
+}
+
+.faq .content-wrapper {
+  @media screen and (min-width: $ipad) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.faq .section__title {
+  @media screen and (min-width: $ipad) {
+    text-align: left;
+    max-width: 275px;
+    margin-right: 20px;
+    &.content-wrapper {
+      padding: 0;
+    }
+  }
+  @media screen and (min-width: $ipadpro) {
+    max-width: 300px;
+  }
+  
 }

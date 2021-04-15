@@ -1,14 +1,25 @@
+.flat-features {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
 .flat-features.section {
   position: relative;
   padding-top: 280px;
   
   @media screen and (min-width: $iphone11) {
     padding-top: 350px;
-    @media screen and (min-width: $ipad) {
-      padding-top: 190px;
-      padding-bottom: 190px;
-      padding-left: 373px;
-    }
+  }
+  @media screen and (min-width: $ipad) {
+    padding-top: 190px;
+    padding-bottom: 190px;
+    padding-left: 373px;
+  }
+  @media screen and (min-width: $ipadpro) {
+    box-sizing: content-box;
+    padding-left: 570px;
+    max-width: 370px;
   }
   
   &::before {
@@ -30,6 +41,10 @@
       background-repeat: no-repeat;
       background-position: 0 0;
     }
+    @media screen and (min-width: $ipadpro) {
+      width: 500px;
+    }
+    
   }
 }
 

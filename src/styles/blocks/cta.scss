@@ -13,6 +13,9 @@
     @media screen and (min-width: $ipad) {
       padding: 40px;
     }
+    @media screen and (min-width: $ipadpro) {
+      padding: 40px 120px;
+    }
   }
 }
 

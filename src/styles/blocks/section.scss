@@ -1,6 +1,10 @@
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
+  @media screen and (min-width: $ipadpro) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }
 
 .section__title {

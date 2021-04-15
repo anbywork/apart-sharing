@@ -9,6 +9,11 @@
   @media screen and (min-width: $ipad) {
     color: $dark;
   }
+  
+  @media screen and (min-width: $ipadpro) {
+    background-size: 780px, 100%;
+    background-position: bottom right;
+  }
 }
 
 //balloon
@@ -25,6 +30,14 @@
   @media screen and (min-width: $ipad) {
     background-repeat: repeat-x;
   }
+  @media screen and (min-width: $ipadpro) {
+    top: 80px;
+    left: auto;
+    right: 40px;
+    width: 550px;
+    background-size: 470px;
+    background-repeat: no-repeat;
+  }
 }
 .how-it-works::after {
   position: absolute;
@@ -36,14 +49,29 @@
   background-image: url("/img/decoration/how-it-works/ballon.svg");
   background-repeat: no-repeat;
   animation: balloon 2s ease-in-out both alternate infinite;
+  @media screen and (min-width: $ipadpro) {
+    top: 260px;
+    left: auto;
+    right: 108px;
+    width: 70px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+  }
 }
 
 .how-it-works.section {
   padding-bottom: 262px;
+  @media screen and (min-width: $ipadpro) {
+    padding-bottom: 65px;
+    padding-top: 80px;
+  }
 }
 
 .how-it-works .section__title {
   color: $white;
+  @media screen and (min-width: $ipadpro) {
+    text-align: left;
+  }
 }
 
 .how-it-works__step-list {
@@ -53,6 +81,12 @@
     background-color: $white;
     border-radius: 12px;
     padding: 40px;
+    margin: 0 auto;
+    max-width: 588px;
+  }
+  @media screen and (min-width: $ipadpro) {
+    max-width: 570px;
+    margin: 0;
   }
 }
 
@@ -127,6 +161,13 @@
   }
 }
 
+.how-it-works__step--accent {
+  @media screen and (min-width: $ipad) {
+    color: $blue;
+  }
+  
+}
+
 
 .how-it-works__step h3 {
   @include reset;
@@ -134,6 +175,10 @@
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.01em;
+  @media screen and (min-width: $ipad) {
+    font-size: 18px;
+    line-height: 20px;
+  }
 }
 
 

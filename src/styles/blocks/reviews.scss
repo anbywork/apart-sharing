@@ -4,6 +4,9 @@
 
 .reviews .section__title {
   margin-bottom: 20px;
+  @media screen and (min-width: $ipadpro) {
+    margin-bottom: 30px;
+  }
   & br {
     display: none;
     @media screen and (min-width: $ipad) {
@@ -49,6 +52,10 @@
   
   @media screen and (min-width: $ipad) {
     min-width: 216px;
+  }
+  
+  @media screen and (min-width: $ipadpro) {
+    min-width: 300px;
   }
   
   

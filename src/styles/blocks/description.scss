@@ -1,6 +1,8 @@
 .description {
   padding-bottom: 34px;
   min-height: 100vh;
+  width: 100%;
+  
   @media screen and (min-width: $ipad) {
     position: relative;
     overflow: hidden;
@@ -8,6 +10,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-top: 80px;
     
     &::before {
       position: absolute;
@@ -23,6 +26,8 @@
   }
   
   @media screen and (min-width: $ipadpro) {
+    padding-bottom: 0;
+    
     &::before {
       width: 2914px;
       height: 2914px;
@@ -102,19 +107,46 @@
 
 }
 
-.description .content-wrapper {
+.description__content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 15px;
+  width: 100%;
   @media screen and (min-width: $iphone11) {
     align-items: flex-start;
+    padding: 0 30px;
   }
   @media screen and (min-width: $ipad) {
     order: 1;
-  }
-  @media screen and (min-width: $ipadpro) {
     width: 370px;
   }
+  @media screen and (min-width: $ipadpro) {
+    padding-left: 40px;
+    overflow-x: hidden;
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      width: 367px;
+      height: 367px;
+      background: #F6B656;
+      opacity: 0.1;
+      filter: blur(100px);
+    }
+  
+    &::before {
+      top: 123px;
+      right: -129px;
+    }
+  
+    &::after {
+      left: -136px;
+      bottom: -163px;
+    }
+  }
+  
+ 
 }
 
 .description__title {
@@ -150,5 +182,14 @@
   }
   @media screen and (min-width: $ipad) {
     margin-bottom: 100px;
+  }
+}
+
+
+.description .btn-list {
+  @media screen and (min-width: $iphone11) {
+    width: 240px;
+    padding-bottom: 20px;
+    margin-left: 0;
   }
 }

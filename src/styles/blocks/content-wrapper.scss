@@ -9,4 +9,8 @@
     padding-left: 40px;
     padding-right: 40px;
   }
+  @media screen and (min-width: $ipadpro) {
+    max-width: 940px;
+    margin: 0 auto;
+  }
 }

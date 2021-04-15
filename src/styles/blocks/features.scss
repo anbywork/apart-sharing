@@ -17,8 +17,11 @@
 
 .features__content {
   @media screen and (min-width: $ipad) {
-    width: 393px;
+    width: 395px;
     margin-left: 40px;
+  }
+  @media screen and (min-width: $ipadpro) {
+    margin-left: 120px;
   }
 }
 
@@ -73,6 +76,9 @@
     width: 268px;
     margin-bottom: 0;
     
+  }
+  @media screen and (min-width: $ipadpro) {
+    left: 514px;
   }
 }
 
