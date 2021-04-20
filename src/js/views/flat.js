@@ -2,12 +2,14 @@ export const createFlatTemplate = (flat, flatIndex) => {
   if (!flat) {
     return;
   }
-  const {images, rating, reviewsCount, city, street, home} = flat;
-
+  const {apartments_images, rating, reviews_amount, city, street, building, title} = flat;
+  const images = apartments_images;
+  const home = building;
+  const reviewsCount = reviews_amount;
   const getImages = () => {
     let imagesHTML = '';
     for (let i = 0; i < images.length; i++) {
-      imagesHTML += `<li><img class="flat__img" src="img/content/${images[i]['1x']}" srcset="/img/content/${images[i]['2x']} 2x" alt=""></li>`
+      imagesHTML += `<li class="flat__img-container"><img class="flat__img" src="https://apartshering.ru/${images[i]['image_png']}" alt=""></li>`
     }
     return imagesHTML;
   }
@@ -45,8 +47,8 @@ export const createFlatTemplate = (flat, flatIndex) => {
                     <span class="flat__rating">${rating}</span> 
                     <span class="flat__reviews">(${reviewsCount} отзывов)</span>
                 </div>
-                <p class="flat__city">${city}</p>
-                <p class="flat__address">${street}, ${home}</p>
+                <p class="flat__city">${title}</p>
+                <p class="flat__address">${city} ${street}, ${home}</p>
             </div>
         </li>`;
 }

@@ -23,12 +23,36 @@
   margin-left: 16px;
 }
 
-.flat__img {
+.flat__img-container {
+  overflow: hidden;
+  min-width: 270px;
+  max-height: 220px;
+  @media screen and (min-width: $iphone11) {
+    width: 295px;
+    min-width: 295px;
+  }
   @media screen and (min-width: $ipad) {
     width: 216px;
+    min-width: 216px;
   }
   @media screen and (min-width: $desktop) {
     width: 300px;
+    min-width: 300px;
+  }
+}
+
+.flat__img {
+  min-width: 270px;
+  object-fit: cover;
+  max-height: 250px;
+  @media screen and (min-width: $iphone11) {
+    min-width: 295px;
+  }
+  @media screen and (min-width: $ipad) {
+    min-width: 216px;
+  }
+  @media screen and (min-width: $desktop) {
+    min-width: 300px;
   }
 }
 

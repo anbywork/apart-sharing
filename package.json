@@ -2,7 +2,10 @@
   "name": "apartSharing",
   "version": "1.0.0",
   "dependencies": {
+    "apollo-boost": "^0.4.9",
     "csscomb": "^4.3.0",
+    "graphql": "^15.5.0",
+    "graphql-tag": "^2.11.0",
     "gulp-uglify-es": "^2.0.0",
     "jquery": "^3.5.1",
     "moment": "^2.29.1",
