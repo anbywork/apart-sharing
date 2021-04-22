@@ -6,6 +6,7 @@ import {createFlatTemplate} from "./views/flat";
 import {setFlatListPosition} from "./components/flat-list";
 import {setSlider} from "./components/slider";
 import {setAccordions} from "./components/accordion";
+import {anchorAnimationScroll} from "./components/anchor-animation-scroll";
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
 
@@ -64,7 +65,7 @@ setBtnsList();
 setBurger();
 setPageHeader();
 setAccordions();
-
+anchorAnimationScroll();
 
 
 

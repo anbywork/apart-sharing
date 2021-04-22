@@ -13,7 +13,7 @@
     width: 216px;
     min-width: 216px;
   }
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $ipadpro) {
     width: 300px;
   }
 }
@@ -35,7 +35,7 @@
     width: 216px;
     min-width: 216px;
   }
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $ipadpro) {
     width: 300px;
     min-width: 300px;
   }
@@ -51,7 +51,7 @@
   @media screen and (min-width: $ipad) {
     min-width: 216px;
   }
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $ipadpro) {
     min-width: 300px;
   }
 }

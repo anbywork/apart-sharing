@@ -58,13 +58,13 @@
   <nav class="page-header__nav page-nav">
     <div class="content-wrapper">
       <ul class="page-nav__list">
-        <li class="page-nav__item"><a class="page-nav__link" href="#">Как это работает</a></li>
-        <li class="page-nav__item"><a class="page-nav__link" href="#">Квартиры</a></li>
-        <li class="page-nav__item"><a class="page-nav__link" href="#">Что есть в квартирах</a></li>
-        <li class="page-nav__item"><a class="page-nav__link" href="#">Отзывы</a></li>
-        <li class="page-nav__item"><a class="page-nav__link" href="#">Функции приложения</a></li>
-        <li class="page-nav__item"><a class="page-nav__link" href="#">Вопросы и ответы</a></li>
-        <li class="page-nav__item"><a class="page-nav__link" href="#">Помощь</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#how-it-works">Как это работает</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#flats">Квартиры</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#flats-features">Что есть в квартирах</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#reviews">Отзывы</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#functions">Функции приложения</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#faq">Вопросы и ответы</a></li>
+        <li class="page-nav__item"><a class="page-nav__link" href="#support">Помощь</a></li>
       </ul>
       @@include('html-blocks/_btn-list.html')
     </div>
@@ -76,7 +76,13 @@
   <section class="description">
     <div class="description__wrapper">
       <div class="description__img">
-        <img src="/img/content/app-start.png" alt="">
+        <picture>
+          <source media="(min-width: 768px)" srcset="/img/content/appstart-ipad.jpg, /img/content/appstart-ipad@2x.jpg 2x">
+          <source media="(min-width: 1024px)" srcset="/img/content/appstart-ipadpro.jpg, /img/content/appstart-ipadpro@2x.jpg 2x">
+          <source media="(min-width: 1170px)" srcset="/img/content/appstart-ipad.jpg, /img/content/appstart-ipad@2x.jpg 2x">
+          <img src="/img/content/appstart-320.jpg" srcset="/img/content/appstart-320@2x.jpg 2x" alt="">
+        </picture>
+        
       </div>
       <div class="description__content">
         <h1 class="description__title">Бесконтактная аренда жилья в&nbsp;вашем смартфоне</h1>
@@ -86,7 +92,7 @@
     </div>
     
   </section>
-  <section class="how-it-works section">
+  <section class="how-it-works section" id="how-it-works">
     <div class="content-wrapper">
       <div class="how-it-works__header">
         <h2 class="section__title">Как это работает</h2>
@@ -116,7 +122,7 @@
       </ul>
     </div>
   </section>
-  <section class="flats section">
+  <section class="flats section" id="flats">
     <h2 class="section__title">Вы можете въехать сюда уже сегодня</h2>
     <div class="flats__list-container">
       <ul class="flats__list"></ul>
@@ -125,12 +131,12 @@
     @@include('html-blocks/_btn-list.html')
   
   </section>
-  <section class="flat-features section">
+  <section class="flat-features section" id="flats-features">
     <h2 class="section__title">В&nbsp;каждой квартире есть wi-fi и&nbsp;минибар</h2>
     <p>А еще стиральная машина, фен, кровать с&nbsp;белоснежным бельем и&nbsp;кухня.</p>
     <p>Также при подборе вы можете выбрать класс квартиры, количество комнат и посмотреть, что еще есть&nbsp;в&nbsp;квартире.</p>
   </section>
-  <section class="reviews section">
+  <section class="reviews section" id="reviews">
     <div class="content-wrapper">
       <h2 class="section__title">Отзывы тех,<br> кто уже воспользовался сервисом</h2>
     </div>
@@ -143,7 +149,7 @@
     </div>
   
   </section>
-  <section class="features section slider">
+  <section class="features section slider" id="functions">
     <div class="features__content">
       <h2 class="section__title">Что еще можно<br> делать в&nbsp;приложении?</h2>
       <div class="slider__list-container features__list-container">
@@ -283,7 +289,7 @@
     </div>
     
   </section>
-  <section class="faq section">
+  <section class="faq section" id="faq">
     <div class="content-wrapper">
       <h2 class="section__title content-wrapper">Часто задаваемые вопросы</h2>
       <ul class="faq__list accordion">
@@ -307,7 +313,7 @@
     </div>
     
   </section>
-  <section class="cta section">
+  <section class="cta section" id="support">
     <h2 class="section__title">Установите приложение</h2>
     <p class="cta__description">Также есть приложение на Android</p>
     @@include('html-blocks/_btn-list.html')

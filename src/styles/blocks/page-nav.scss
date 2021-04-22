@@ -5,7 +5,7 @@
   height: 100vh;
   background: linear-gradient(170.02deg, #3F4785 0%, #5663F6 100%);
   overflow: hidden;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   @media screen and (min-width: $ipad) {
     width: 375px;
   }
@@ -97,6 +97,7 @@
 
 .page-nav .btn-list {
   margin-top: 40px;
+  align-items: flex-start;
   @media screen and (min-width: $ipad) {
     margin-top: 60px;
   }

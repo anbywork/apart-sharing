@@ -9,8 +9,10 @@
 }
 
 .features .section__title {
+  margin-bottom: 0;
   @media screen and (min-width: $ipad) {
     text-align: left;
+    margin-bottom: 40px;
   }
   
 }
@@ -59,15 +61,23 @@
   align-items: center;
   min-width: 100%;
   margin-bottom: 20px;
+  padding: 30px;
   overflow-x: hidden;
   @media screen and (min-width: $ipad) {
     overflow-x: visible;
     align-items: flex-start;
+    padding: 0;
   }
 }
 
 .features__item label {
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: $ipad) {
+    align-items: flex-start;
+  }
 }
 
 .features__item img {
@@ -96,9 +106,13 @@
 }
 
 .features__item span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   @media screen and (min-width: $ipad) {
     text-align: left;
+    align-items: flex-start;
   }
 }
 
