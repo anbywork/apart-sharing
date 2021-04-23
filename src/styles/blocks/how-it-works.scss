@@ -202,6 +202,9 @@
   &:nth-child(5)::before {
     content: '5';
   }
+  &:nth-child(6)::before {
+    content: '6';
+  }
 }
 
 .how-it-works__step--accent {

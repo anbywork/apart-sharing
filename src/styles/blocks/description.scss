@@ -206,7 +206,7 @@
 .description__title {
   @include reset;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
   font-weight: bold;
   font-size: 25px;
@@ -225,6 +225,7 @@
   @media screen and (min-width: $desktop) {
     font-size: 60px;
     line-height: 64px;
+    margin-bottom: 50px;
   }
   
 }
