@@ -1,0 +1,29 @@
+.finance {
+  max-width: calc(100% - 535px);
+  padding-left: 135px;
+  padding-right: 100px;
+  background-color: $blue;
+  @media screen and (max-width: $desktop - 1px) {
+    max-width: none;
+    margin: 0 50px 50px;
+    padding: 0;
+    background-color: transparent;
+  }
+  @media screen and (max-width: $ipad - 1px) {
+    margin: 0 30px 50px;
+  }
+  @media screen and (max-width: $iphone11 - 1px) {
+    margin: 0 15px 50px;
+  }
+}
+
+.finance .section__title {
+  text-align: left;
+  color: $white;
+  @media screen and (max-width: $ipadpro - 1px) {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+}
+

@@ -1,0 +1,16 @@
+.partners-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid $light-grey;
+}
+
+.partners-section .section__title {
+  margin-bottom: 12px;
+}
+
+.partners-section p {
+  @include reset;
+  margin-bottom: 40px;
+  text-align: center;
+}

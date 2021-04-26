@@ -1,4 +1,5 @@
 .btn {
+  @include reset;
   background-color: transparent;
   box-shadow: none;
   border: none;

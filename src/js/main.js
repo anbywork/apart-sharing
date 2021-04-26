@@ -10,6 +10,8 @@ import {anchorAnimationScroll} from "./components/anchor-animation-scroll";
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
 import {showFAQ} from "./views/faq";
+import {setCalc} from "./components/calc";
+import {setFeaturesSlider} from "./views/features";
 
 const FLAT_COUNT = 3;
 function render(parentElement, place, template,) {
@@ -51,11 +53,12 @@ client.query({
       `,
 })
   .then((data) => {
+
     showFlats(data.data.apartments.data);
     showFAQ(data.data.faq.data);
     setAccordions();
-    const sliders = document.querySelectorAll('.slider');
-    for(let slider of Array.from(sliders)) {
+    const slidersFlats = document.querySelectorAll('.flats .slider');
+    for(let slider of Array.from(slidersFlats)) {
       setSlider(slider);
     }
   })
@@ -64,16 +67,30 @@ client.query({
 
 function showFlats(dataFlats) {
   const flatsList = document.querySelector('.flats__list');
+  if (!flatsList) {
+    return;
+  }
   for (let i = 0; i < Math.min(FLAT_COUNT, dataFlats.length); i++) {
     render (flatsList, 'beforeend', createFlatTemplate(dataFlats[i], i));
   }
   setFlatListPosition();
 }
 
+setCalc();
+
 
 setBtnsList();
 setBurger();
 setPageHeader();
+setFeaturesSlider();
+
+
+window.addEventListener('resize', function () {
+  console.log('resize');
+  setCalc();
+  setFlatListPosition();
+  setFeaturesSlider();
+});
 
 anchorAnimationScroll();
 

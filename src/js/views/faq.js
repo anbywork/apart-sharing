@@ -10,6 +10,9 @@ function setItem (question, answer) {
 
 export const showFAQ = (data) => {
   const listFAQ = document.querySelector('.faq__list');
+  if (!listFAQ) {
+    return;
+  }
   for (let faqItem of data) {
     const item = document.createElement('div');
     item.innerHTML = setItem(faqItem.question, faqItem.answer);

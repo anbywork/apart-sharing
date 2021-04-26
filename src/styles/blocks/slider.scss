@@ -15,8 +15,11 @@
 }
 
 .slider__list {
-  transform: translateX(0);
-  transition: transform 300ms ease-in-out;
+  position: relative;
+  //transform: translateX(0);
+  transition: left;
+  transition-timing-function: ease-in-out;
+  left: 0;
 }
 
 .slider__list li {

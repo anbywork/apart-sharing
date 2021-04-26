@@ -1,0 +1,106 @@
+.partners-form {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 80px 135px 80px 100px;
+  width: 535px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  height: 100vh;
+  z-index: 2;
+  
+  @media screen and (max-width: $desktop - 1px) {
+    margin: 0 50px;
+    position: static;
+    width: calc(100% - 100px);
+    padding: 0;
+    height: auto;
+    
+  }
+  @media screen and (max-width: $ipadpro - 1px) {
+    margin-bottom: 150px;
+    background-color: $white;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  @media screen and (max-width: $ipad - 1px) {
+    margin: 0 30px 150px;
+    width: calc(100% - 60px);
+  }
+  @media screen and (max-width: $iphone11 - 1px) {
+    margin: 0 15px 150px;
+    width: calc(100% - 30px);
+  }
+  
+}
+
+.partners-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  @media screen and (max-width: $desktop - 1px) {
+    flex-direction: row;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 12px;
+  }
+  @media screen and (max-width: $ipadpro - 1px) {
+    flex-direction: column;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.partners-form input{
+  margin-bottom: 10px;
+  @media screen and (max-width: $desktop - 1px) {
+    flex-grow: 1;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: $ipadpro - 1px) {
+    flex-shrink: 1;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+.partners-form button span {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 30px;
+  width: 100%;
+  @media screen and (max-width: $desktop - 1px) {
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  @media screen and (max-width: $ipadpro - 1px) {
+    flex-shrink: 1;
+    margin-bottom: 30px;
+  }
+}
+
+.partners-form p {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: $dark70;
+  @media screen and (max-width: $desktop - 1px) {
+    color: $white;
+    & a {
+      color: $white;
+    }
+  }
+  @media screen and (max-width: $ipadpro - 1px) {
+    color: $dark70;
+    margin-bottom: 20px;
+    & a {
+      color: $blue;
+    }
+  }
+}

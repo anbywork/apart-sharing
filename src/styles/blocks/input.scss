@@ -1,0 +1,22 @@
+input {
+  padding: 20px 16px;
+  height: 56px;
+  box-sizing: border-box;
+  border: 1px solid rgba(40, 40, 42, 0.1);
+  border-radius: 4px;
+  background: #F6F6F8;
+  box-shadow: none;
+}
+
+input::placeholder {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba($dark, 0.4);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #5663F6;
+  box-shadow: 0 0 0 1px $blue;
+}

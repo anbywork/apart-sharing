@@ -43,6 +43,17 @@
   }
 }
 
+.page-header--partner .page-header__logo path {
+  fill: $white;
+}
+
+.page-header--partner.page-header--white .page-header__logo path {
+  @media screen and (min-width: $desktop){
+    fill: $dark;
+  }
+  
+}
+
 .page-header--white {
   background-color: $blue;
   @media screen and (min-width: $desktop) {

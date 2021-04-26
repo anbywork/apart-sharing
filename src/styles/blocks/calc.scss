@@ -1,0 +1,122 @@
+.calc {
+  padding: 30px;
+  border-radius: 20px;
+  background-color: $white;
+  max-width: 660px;
+}
+
+.calc__summary {
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 41px;
+  color: $blue;
+}
+
+.calc__summary-description {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: $dark70;
+}
+
+.calc__range {
+  margin-top: 30px;
+}
+
+.calc__range h3 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: $dark;
+}
+
+.calc-range {
+  position: relative;
+}
+
+.calc-range__list {
+  position: relative;
+  @include reset-list;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-color: $blue;
+  }
+}
+
+.calc-range__li {
+  cursor: pointer;
+  position: relative;
+  padding-top: 14px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: $dark70;
+  white-space: nowrap;
+  
+  @media screen and (max-width: $ipad - 1px) {
+    font-size: 10px;
+  }
+  
+  &::before {
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 6px;
+    background-color: $blue;
+    top: -2px;
+    left: calc(50% - 1px);
+  }
+}
+
+.calc-range__li--hide {
+  opacity: 0;
+}
+
+.calc-range__li--active {
+  color: $blue;
+}
+
+.calc-range__indicator {
+  position: absolute;
+  content: '';
+  bottom: 19px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  
+  background: $blue;
+  box-sizing: content-box;
+  border: 3px solid $white;
+  box-shadow: 0px 0px 2px rgba($blue, 0.8);
+  border-radius: 50%;
+}
+
+.calc-range__indicator--active {
+  box-shadow: 0px 0px 5px 1px rgba($blue, 0.8);
+}
+
+.calc__range--flow .calc-range__indicator::after {
+  position: absolute;
+  content: attr(data-content);
+  bottom: -25px;
+  transform: translateX(calc(-50% + 6px));
+  white-space: nowrap;
+  padding: 2px 5px;
+  border-radius: 2px;
+  background-color: $white;
+  box-shadow: 0 0px 2px 1px rgba($blue, 0.2);
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: $blue;
+}
