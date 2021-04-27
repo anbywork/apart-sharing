@@ -12,6 +12,8 @@ import gql from 'graphql-tag';
 import {showFAQ} from "./views/faq";
 import {setCalc} from "./components/calc";
 import {setFeaturesSlider} from "./views/features";
+import {showReviews} from "./views/review-list";
+import {setPartnersForm} from "./components/partners-form";
 
 const FLAT_COUNT = 3;
 function render(parentElement, place, template,) {
@@ -33,22 +35,30 @@ client.query({
                 question
               }
             }
+            feedback{
+              data {
+                message
+                fio
+                review_score
+                
+              }
+            }
             apartments {
-                        data {
-                          title
-                          apartments_images {
-                            image_png
-                          }
-                          
-                          rating
-                          reviews_amount
-                          city
-                          street
-                          building
-                        }
-                    
-                        status
-                      }
+              data {
+                title
+                apartments_images {
+                  image_png
+                }
+                
+                rating
+                reviews_amount
+                city
+                street
+                building
+              }
+          
+              status
+            }
           }
       `,
 })
@@ -56,6 +66,7 @@ client.query({
 
     showFlats(data.data.apartments.data);
     showFAQ(data.data.faq.data);
+    showReviews(data.data.feedback.data);
     setAccordions();
     const slidersFlats = document.querySelectorAll('.flats .slider');
     for(let slider of Array.from(slidersFlats)) {
@@ -83,10 +94,10 @@ setBtnsList();
 setBurger();
 setPageHeader();
 setFeaturesSlider();
+setPartnersForm();
 
 
 window.addEventListener('resize', function () {
-  console.log('resize');
   setCalc();
   setFlatListPosition();
   setFeaturesSlider();

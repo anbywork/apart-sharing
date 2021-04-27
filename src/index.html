@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <title>Apart Sharing — бесконтактная аренда жилья в вашем смартфоне</title>
+  <link rel="preload" as="style" href="style/main.min.css" />
+  <link rel="preload" as="image" href="/img/decoration/main-img.jpg" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.min.css">
@@ -133,7 +135,7 @@
   
   </section>
   <section class="flat-features section" id="flats-features">
-    <h2 class="section__title">В&nbsp;каждой квартире есть wi-fi</h2>
+    <h2 class="section__title">В&nbsp;каждой квартире есть&nbsp;wi&#8209;fi</h2>
     <p>А еще стиральная машина, кровать с&nbsp;белоснежным бельем и&nbsp;кухня.</p>
     <p>Также при подборе вы можете выбрать класс квартиры, количество комнат и посмотреть, что еще есть&nbsp;в&nbsp;квартире.</p>
   </section>
@@ -143,9 +145,6 @@
     </div>
     <div class="reviews__list-container">
       <ul class="reviews__list">
-        @@include('html-blocks/_review.html')
-        @@include('html-blocks/_review.html')
-        @@include('html-blocks/_review.html')
       </ul>
     </div>
   
@@ -304,15 +303,14 @@
     @@include('html-blocks/_btn-list.html')
   </section>
   <section class="partners-section section content-wrapper">
-    <h2 class="section__title">Сдайте выгодно квартиру&nbsp;посуточно </h2>
-    <p>И зарабатывайте до&nbsp;2х&nbsp;раз больше ежемесячной&nbsp;аренды</p>
+    <h2 class="section__title">Стань партнером</h2>
+    <p>и&nbsp;зарабатывай от&nbsp;1&nbsp;млн&nbsp;₽ в&nbsp;своем городе</p>
     <a class="btn" href="/partners.html"><span>Оставить заявку</span></a>
   </section>
   <section class="support section">
     <h2 class="section__title">Техподдержка</h2>
     <ul class="support__list">
-      <!--                todo: поставить правильный номер телефона-->
-      <li><a class="support__btn support__btn--phone" href="tel:">+ 8 800 123 12 12</a></li>
+      <li><a class="support__btn support__btn--phone" href="tel:88001000607">+ 8 800 100 06 07</a></li>
       <li><a class="support__btn support__btn--whatsapp" href="https://wa.me/79141507777">Чат в WhatsApp</a></li>
       <li><a class="support__btn support__btn--email" href="mailto:support@apartsharing.com">support@apartsharing.com</a></li>
     </ul>

@@ -3,6 +3,8 @@
 }
 
 .slider__list-container {
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 }
 
@@ -20,6 +22,7 @@
   transition: left;
   transition-timing-function: ease-in-out;
   left: 0;
+  flex-shrink: 0;
 }
 
 .slider__list li {

@@ -68,19 +68,28 @@
   }
 }
 
+.partners-form button {
+  margin-bottom: 30px;
+  @media screen and (max-width: $desktop - 1px) {
+    margin-bottom: 0;
+  }
+  @media screen and (max-width: $ipadpro - 1px) {
+    margin-bottom: 30px;
+  }
+}
+
 .partners-form button span {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  margin-bottom: 30px;
+  
   width: 100%;
   @media screen and (max-width: $desktop - 1px) {
     flex-grow: 1;
-    margin-bottom: 0;
+    
   }
   @media screen and (max-width: $ipadpro - 1px) {
     flex-shrink: 1;
-    margin-bottom: 30px;
   }
 }
 
