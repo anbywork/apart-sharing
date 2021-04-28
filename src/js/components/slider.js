@@ -12,8 +12,6 @@ export const setSlider = (slider) => {
   }
 
   if (slider.classList.contains('slider--swiper')) {
-    // sliderList.addEventListener('touchstart', onStartSlider);
-    // sliderList.addEventListener('mousedown', onStartSlider);
     const sliderLi = sliderList.querySelectorAll('li');
     for (let li of Array.from(sliderLi)) {
       li.addEventListener('touchstart', onStartSlider);
@@ -23,12 +21,13 @@ export const setSlider = (slider) => {
     function onStartSlider(startEvt) {
 
       let startCoords = {};
+      let shift = {};
       if (startEvt.type === 'touchstart') {
         startCoords.x = Math.floor(startEvt.touches[0].clientX);
         startCoords.y = Math.floor(startEvt.touches[0].clientY);
         if (startEvt.touches.length === 1) {
-          document.addEventListener('touchmove', documentSliderMoveHandler);
-          document.addEventListener('touchend', documentSliderEndHandler);
+          document.addEventListener('touchmove', documentSliderMoveHandler, {passive: false});
+          document.addEventListener('touchend', documentSliderEndHandler, {passive: false});
           document.addEventListener('mousemove', documentSliderMoveHandler);
           document.addEventListener('mouseup', documentSliderEndHandler);
         }
@@ -36,42 +35,46 @@ export const setSlider = (slider) => {
         startEvt.preventDefault();
         startCoords.x = Math.floor(startEvt.clientX);
         startCoords.y = Math.floor(startEvt.clientY);
-        document.addEventListener('touchmove', documentSliderMoveHandler);
-        document.addEventListener('touchend', documentSliderEndHandler);
+        document.addEventListener('touchmove', documentSliderMoveHandler, {passive: false});
+        document.addEventListener('touchend', documentSliderEndHandler, {passive: false});
         document.addEventListener('mousemove', documentSliderMoveHandler);
         document.addEventListener('mouseup', documentSliderEndHandler);
       }
+      startCoords.topPosition = window.scrollY;
+
       let swipe = false;
       let direction = 'right';
-
+      sliderList.style.transitionDuration = '0ms';
 
       function documentSliderMoveHandler(moveEvt) {
-        let shift = {};
-        if (startEvt.type === 'touchstart') {
+
+        if (moveEvt.type === 'touchmove') {
           shift.x = Math.floor(moveEvt.touches[0].clientX - startCoords.x);
           shift.y = Math.floor(moveEvt.touches[0].clientY - startCoords.y);
         } else {
           shift.x = Math.floor(moveEvt.clientX - startCoords.x);
           shift.y = Math.floor(moveEvt.clientY - startCoords.y);
         }
+
+
+
         // если смещение по горизонтали больше
         // чем смещение по вертикали, то это свайп
-        if ((Math.abs(shift.y) < (Math.abs(shift.x)+20))) {
-          if (Math.abs(shift.x) > 50) {
-            swipe = true;
-          }
-          let currentPosition = +sliderList.getAttribute('data-offset');
-          if (shift.x < 0) {
-            direction = 'right';
-          } else {
-            direction = 'left';
-          }
-          currentPosition += shift.x;
-
-          sliderList.style.transitionDuration = '0ms';
-          sliderList.style.left = `${currentPosition}px`;
+        if (Math.abs(shift.x) - Math.abs(shift.y) > 30 && Math.abs(shift.x) > 30) {
+          moveEvt.preventDefault();
+          swipe = true;
+        } else {
+          swipe = false;
         }
+        let currentPosition = +sliderList.getAttribute('data-offset');
+        if (shift.x < 0) {
+          direction = 'right';
+        } else {
+          direction = 'left';
+        }
+        currentPosition += shift.x;
 
+        sliderList.style.left = `${currentPosition}px`;
       }
 
       function documentSliderEndHandler(endEvt) {
@@ -83,6 +86,8 @@ export const setSlider = (slider) => {
         document.removeEventListener('mouseup', documentSliderEndHandler);
 
         if (swipe) {
+          endEvt.preventDefault();
+          window.scrollY = startCoords.topPosition;
           let newSlideNumber;
           if (direction === 'right') {
             newSlideNumber = (currentSlide + 1) < (controlList.length) ? (currentSlide + 1) : 0;

@@ -1,0 +1,8 @@
+.more-info {
+  @media screen and (min-width: $ipadpro) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+  }
+}

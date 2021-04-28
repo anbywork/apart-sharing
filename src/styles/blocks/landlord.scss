@@ -1,42 +1,29 @@
-.partners-section {
+.landlord {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $dark;
-  color: $white;
+  border-bottom: 1px solid $light-grey;
   @media screen and (min-width: $ipadpro) {
-    padding-rigth: calc((100% - 960px) / 2);
+    padding-left: calc((100% - 960px) / 2);
     align-items: flex-start;
-    
   }
 }
 
-.partners-section .section__title {
+.landlord .section__title {
   margin-bottom: 12px;
-  color: $white;
-  & br {
-    display: none;
-  }
   @media screen and (min-width: $ipadpro) {
     text-align: left;
-    
-    & br {
-      display: inline;
-    }
   }
 }
 
-.partners-section p {
+.landlord p {
   @include reset;
   margin-bottom: 40px;
   text-align: center;
-  color: rgba($white, 0.7);
   @media screen and (min-width: $ipadpro) {
     text-align: left;
-    
   }
 }
 
-.partners-section .btn {
-  margin-top: auto;
-}
+
+

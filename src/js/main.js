@@ -14,6 +14,7 @@ import {setCalc} from "./components/calc";
 import {setFeaturesSlider} from "./views/features";
 import {showReviews} from "./views/review-list";
 import {setPartnersForm} from "./components/partners-form";
+import {setLandlordFormPopup} from "./components/landlord-form";
 
 const FLAT_COUNT = 3;
 function render(parentElement, place, template,) {
@@ -95,6 +96,7 @@ setBurger();
 setPageHeader();
 setFeaturesSlider();
 setPartnersForm();
+setLandlordFormPopup();
 
 
 window.addEventListener('resize', function () {

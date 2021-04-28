@@ -54,8 +54,6 @@ export const setPartnersForm = () => {
 
   });
 
-  const formData= new FormData(partnersForm);
-
 };
 
 function checkPhone(phoneElement, phone) {

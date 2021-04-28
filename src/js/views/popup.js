@@ -32,6 +32,27 @@ export const getErrorPopup = (message = errorMessage) => {
   return element.querySelector('.popup');
 }
 
+export const getLandlordPopup = () => {
+  const popupCode = `<div class="popup landlord-popup">
+        <div class="popup__bg"></div>
+        <div class="popup__content">
+          <h2 class="popup__title">Отправьте заявку</h2>
+          <form class="landlord__form popup__form">
+            <input type="text" name="username" placeholder="Имя" required>
+            <input class="imaskjs" type="tel" name="phone" value="+7 " required>
+            <input type="text" name="city" placeholder="Город" required>
+            <button class="btn" type="submit"><span>Оставить заявку</span></button>
+            <div class="popup__caption">Нажимая на кнопку <b>Отправить заявку</b>, вы принимаете условия <a href="/legal">Политики обработки персональных данных</a></div>
+          </form>
+          <button class="popup__close-btn"><span class="visually-hidden">Закрыть</span></button>
+        </div>
+      </div>`;
+
+  const element = document.createElement('div');
+  element.innerHTML = popupCode;
+  return element.querySelector('.popup');
+}
+
 export const setPopup = () => {
   const popup = document.querySelector('.popup');
   const btnClose = popup.querySelector('.popup__close-btn');
@@ -48,10 +69,12 @@ export const setPopup = () => {
     if (evt.key === 'Escape') {
       popup.remove();
     }
+
   }
   if (popup.classList.contains('popup--error')) {
     const popupBtn = popup.querySelector('.popup__button');
     popupBtn.addEventListener('click', function() {
+      console.log('remove');
       popup.remove();
     });
   }

@@ -2,6 +2,8 @@ export const setBurger = () => {
     const header = document.querySelector('.page-header');
     const burgerBtn = header.querySelector('.page-header__burger');
     const navigationMenu = header.querySelector('.page-header__nav');
+    let scrollValue = 0;
+    let clientWidthStart = document.documentElement.clientWidth;
 
     burgerBtn.addEventListener('click', onClickBurgerBtn);
 
@@ -14,9 +16,12 @@ export const setBurger = () => {
     }
 
     function openNav() {
+        stopScroll();
         navigationMenu.classList.remove('page-header__nav--closed');
         navigationMenu.classList.add('page-header__nav--opened');
         burgerBtn.classList.add('page-header__burger--opened');
+
+
         document.addEventListener('keydown', onDocumentKeyDown);
         document.addEventListener('click', onDocumentClick);
 
@@ -26,8 +31,37 @@ export const setBurger = () => {
         navigationMenu.classList.remove('page-header__nav--opened');
         navigationMenu.classList.add('page-header__nav--closed');
         burgerBtn.classList.remove('page-header__burger--opened');
-        document.removeEventListener('keydown', onDocumentKeyDown);
-        document.removeEventListener('click', onDocumentClick);
+        startScroll();
+
+    }
+
+    function stopScroll () {
+        window.addEventListener('scroll', onScroll);
+        scrollValue = window.pageYOffset;
+        document.body.style.maxHeight = document.documentElement.clientHeight + 'px';
+        document.body.style.overflow = 'hidden';
+        if (document.documentElement.clientWidth > clientWidthStart) {
+            document.body.style.paddingRight = document.documentElement.clientWidth - clientWidthStart + 'px';
+            clientWidthStart = document.documentElement.clientWidth;
+        }
+
+    }
+
+    function startScroll () {
+        window.removeEventListener('scroll', onScroll);
+        window.scrollTo (0, scrollValue);
+        document.body.style.maxHeight = '';
+        document.body.style.overflow = '';
+        if (document.documentElement.clientWidth < clientWidthStart) {
+            document.body.style.paddingRight = '0px';
+            clientWidthStart = document.documentElement.clientWidth;
+        }
+
+    }
+
+    function onScroll (evt) {
+        console.log(evt.type);
+        evt.preventDefault();
     }
 
     function onDocumentKeyDown(evt) {

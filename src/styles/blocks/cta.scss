@@ -14,7 +14,7 @@
       padding: 40px;
     }
     @media screen and (min-width: $ipadpro) {
-      padding: 40px 120px;
+      padding: 60px 120px;
     }
     @media screen and (min-width: $desktop) {
       padding-left: calc((100% - 960px) / 2);
@@ -82,4 +82,9 @@
   @media screen and (min-width: $desktop) {
     right: calc((100% - 960px + 300px) / 2);
   }
+}
+
+.cta .btn span {
+  background-color: transparent;
+  border: 1px solid $white;
 }
