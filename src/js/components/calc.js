@@ -1,3 +1,5 @@
+
+
 class Calc {
   constructor(element) {
     this.element = element;
@@ -222,10 +224,14 @@ export const setCalc = () => {
   const lastElement = calc.costRangeElement.querySelector('.calc-range__li:last-child');
   const rightEdge = lastElement.offsetLeft + lastElement.offsetWidth / 2;
   const widthRange = rightEdge - leftEdge;
-  calc.costRange.indicatorElement.style.left = Math.round(widthRange * ((calc.costRange.current - calc.costRange.min) / (calc.costRange.max - calc.costRange.min))) + 'px';
+  let currentValue = calc.costRange.indicatorElement.getAttribute('data-content').replace(/\s/g, '').split('₽')[0];
+  currentValue = +currentValue > 0 ? currentValue : calc.costRange.current;
+  calc.costRange.indicatorElement.style.left = Math.round(widthRange * ((currentValue - calc.costRange.min) / (calc.costRange.max - calc.costRange.min))) + 'px';
+
 
   calc.setIndicator(calc.flatsRange.indicatorElement);
   calc.setFlowIndicator(calc.costRange.indicatorElement);
+
   calc.setFlatCount();
 
 }

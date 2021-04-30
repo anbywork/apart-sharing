@@ -104,6 +104,7 @@ export const setSlider = (slider) => {
   }
 
   function changeSlide(slide) {
+    sliderList.style.transitionDuration = '300ms';
     const widthSlide = sliderListContainer.offsetWidth;
     const offset = - slide * widthSlide;
     sliderList.style.left = `${offset}px`;

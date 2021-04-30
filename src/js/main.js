@@ -17,6 +17,7 @@ import {setPartnersForm} from "./components/partners-form";
 import {setLandlordFormPopup} from "./components/landlord-form";
 
 const FLAT_COUNT = 3;
+let screenWidth = document.documentElement.offsetWidth;
 function render(parentElement, place, template,) {
     parentElement.insertAdjacentHTML(place, template);
 }
@@ -100,9 +101,12 @@ setLandlordFormPopup();
 
 
 window.addEventListener('resize', function () {
-  setCalc();
-  setFlatListPosition();
-  setFeaturesSlider();
+  if(screenWidth !== document.documentElement.offsetWidth) {
+    screenWidth = document.documentElement.offsetWidth;
+    setCalc();
+    setFlatListPosition();
+    setFeaturesSlider();
+  }
 });
 
 anchorAnimationScroll();

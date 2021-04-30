@@ -40,10 +40,6 @@ export const setBurger = () => {
         scrollValue = window.pageYOffset;
         document.body.style.maxHeight = document.documentElement.clientHeight + 'px';
         document.body.style.overflow = 'hidden';
-        if (document.documentElement.clientWidth > clientWidthStart) {
-            document.body.style.paddingRight = document.documentElement.clientWidth - clientWidthStart + 'px';
-            clientWidthStart = document.documentElement.clientWidth;
-        }
 
     }
 
@@ -52,10 +48,6 @@ export const setBurger = () => {
         window.scrollTo (0, scrollValue);
         document.body.style.maxHeight = '';
         document.body.style.overflow = '';
-        if (document.documentElement.clientWidth < clientWidthStart) {
-            document.body.style.paddingRight = '0px';
-            clientWidthStart = document.documentElement.clientWidth;
-        }
 
     }
 

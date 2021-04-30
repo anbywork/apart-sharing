@@ -9,6 +9,9 @@
   @media screen and (min-width: $ipad) {
     width: 375px;
   }
+  @media screen and (max-height: 400px) {
+    overflow-y: scroll;
+  }
 }
 
 .page-header__logo path {
@@ -61,6 +64,11 @@
   }
   @media screen and (min-width: $ipadpro) {
     padding: 30px;
+  }
+  @media screen and (max-height: 400px) {
+    justify-content: flex-start;
+    padding-top: 30px;
+    margin-bottom: 100px;
   }
   
 }
