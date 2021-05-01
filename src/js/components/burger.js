@@ -32,7 +32,8 @@ export const setBurger = () => {
         navigationMenu.classList.add('page-header__nav--closed');
         burgerBtn.classList.remove('page-header__burger--opened');
         startScroll();
-
+        document.removeEventListener('keydown', onDocumentKeyDown);
+        document.removeEventListener('click', onDocumentClick);
     }
 
     function stopScroll () {
@@ -52,7 +53,6 @@ export const setBurger = () => {
     }
 
     function onScroll (evt) {
-        console.log(evt.type);
         evt.preventDefault();
     }
 
