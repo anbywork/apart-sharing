@@ -34,6 +34,9 @@ export const setBurger = () => {
         startScroll();
         document.removeEventListener('keydown', onDocumentKeyDown);
         document.removeEventListener('click', onDocumentClick);
+        setTimeout(function() {
+            navigationMenu.classList.remove('page-header__nav--closed');
+        }, 300);
     }
 
     function onDocumentKeyDown(evt) {

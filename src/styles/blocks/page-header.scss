@@ -141,13 +141,12 @@
 
 .page-header__nav--opened {
   display: flex;
-  animation: open-navigation 1000ms ease-in-out both;
+  animation: open-navigation 300ms ease-in-out both;
 }
 
 .page-header__nav--closed {
   display: flex;
-  animation: close-navigation 1000ms ease-in-out both;
-  
+  animation: close-navigation 300ms ease-in-out both;
 }
 
 
