@@ -7,8 +7,10 @@ export const setFeaturesSlider = () => {
   setFeaturesSliderSwipe();
   setSlider(slider);
   window.addEventListener('resize', function() {
-    setFeaturesSliderSwipe();
-    setSlider(slider);
+    if(screenWidth !== document.documentElement.offsetWidth) {
+      setFeaturesSliderSwipe();
+      setSlider(slider);
+    }
   });
 
 
