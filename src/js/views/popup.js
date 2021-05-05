@@ -1,3 +1,5 @@
+import {startScroll, stopScroll} from "../components/body";
+
 
 const successMessage = 'Ваша заявка успешно отправлена. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время';
 const errorMessage = 'Проверьте соединение с интернетом или попробуйте позже';
@@ -54,29 +56,35 @@ export const getLandlordPopup = () => {
 }
 
 export const setPopup = () => {
+  stopScroll();
   const popup = document.querySelector('.popup');
   const btnClose = popup.querySelector('.popup__close-btn');
   const popupBG = popup.querySelector('.popup__bg');
 
   btnClose.addEventListener('click', function() {
-    popup.remove();
+    removePopup(popup);
   });
   popupBG.addEventListener('click', function() {
-    popup.remove();
+    removePopup(popup);
   });
   document.addEventListener('keydown', onDocumentKeydown);
   function onDocumentKeydown (evt) {
     if (evt.key === 'Escape') {
-      popup.remove();
+      removePopup(popup);
     }
-
   }
   if (popup.classList.contains('popup--error')) {
     const popupBtn = popup.querySelector('.popup__button');
     popupBtn.addEventListener('click', function() {
-      console.log('remove');
-      popup.remove();
+      removePopup(popup);
     });
   }
+
+
 }
 
+
+function removePopup (popup) {
+  popup.remove();
+  startScroll();
+}

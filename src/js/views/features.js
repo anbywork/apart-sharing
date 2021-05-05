@@ -11,7 +11,9 @@ export const setFeaturesSlider = () => {
     setSlider(slider);
   });
 
+
 }
+
 function setFeaturesSliderSwipe () {
   if (document.documentElement.offsetWidth < 768) {
     // для мобильной версии включаем свайп

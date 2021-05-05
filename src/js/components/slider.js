@@ -14,14 +14,14 @@ export const setSlider = (slider) => {
   if (slider.classList.contains('slider--swiper')) {
     const sliderLi = sliderList.querySelectorAll('li');
     for (let li of Array.from(sliderLi)) {
-      li.addEventListener('touchstart', onStartSlider);
+      li.addEventListener('touchstart', onStartSlider, {passive: false});
       li.addEventListener('mousedown', onStartSlider);
     }
 
     function onStartSlider(startEvt) {
-
       let startCoords = {};
       let shift = {};
+      startEvt.preventDefault();
       if (startEvt.type === 'touchstart') {
         startCoords.x = Math.floor(startEvt.touches[0].clientX);
         startCoords.y = Math.floor(startEvt.touches[0].clientY);
@@ -32,7 +32,6 @@ export const setSlider = (slider) => {
           document.addEventListener('mouseup', documentSliderEndHandler);
         }
       } else {
-        startEvt.preventDefault();
         startCoords.x = Math.floor(startEvt.clientX);
         startCoords.y = Math.floor(startEvt.clientY);
         document.addEventListener('touchmove', documentSliderMoveHandler, {passive: false});
@@ -115,5 +114,4 @@ export const setSlider = (slider) => {
       sliderList.style.transitionDuration = '0ms';
     }, 300);
   }
-
 }

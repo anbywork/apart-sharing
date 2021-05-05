@@ -1,9 +1,9 @@
+import {stopScroll, startScroll} from "./body";
+
 export const setBurger = () => {
     const header = document.querySelector('.page-header');
     const burgerBtn = header.querySelector('.page-header__burger');
     const navigationMenu = header.querySelector('.page-header__nav');
-    let scrollValue = 0;
-    let clientWidthStart = document.documentElement.clientWidth;
 
     burgerBtn.addEventListener('click', onClickBurgerBtn);
 
@@ -24,7 +24,7 @@ export const setBurger = () => {
 
         document.addEventListener('keydown', onDocumentKeyDown);
         document.addEventListener('click', onDocumentClick);
-
+        document.querySelector('main').classList.add('darken');
     }
 
     function closeNav() {
@@ -34,26 +34,6 @@ export const setBurger = () => {
         startScroll();
         document.removeEventListener('keydown', onDocumentKeyDown);
         document.removeEventListener('click', onDocumentClick);
-    }
-
-    function stopScroll () {
-        window.addEventListener('scroll', onScroll);
-        scrollValue = window.pageYOffset;
-        document.body.style.maxHeight = document.documentElement.clientHeight + 'px';
-        document.body.style.overflow = 'hidden';
-
-    }
-
-    function startScroll () {
-        window.removeEventListener('scroll', onScroll);
-        window.scrollTo (0, scrollValue);
-        document.body.style.maxHeight = '';
-        document.body.style.overflow = '';
-
-    }
-
-    function onScroll (evt) {
-        evt.preventDefault();
     }
 
     function onDocumentKeyDown(evt) {
