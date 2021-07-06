@@ -1,9 +1,7 @@
 import {setBtnsList} from "./components/btns-list";
 import {setBurger} from "./components/burger";
 import {setPageHeader} from "./components/page-header";
-import {createFlatTemplate} from "./views/flat";
-// import {generateTaskData} from "./mocks/flat";
-import {setFlatListPosition} from "./components/flat-list";
+import {setFlatListPosition, showDefaultFlats} from "./components/flat-list";
 import {setSlider} from "./components/slider";
 import {setAccordions} from "./components/accordion";
 import {anchorAnimationScroll} from "./components/anchor-animation-scroll";
@@ -15,12 +13,11 @@ import {setFeaturesSlider} from "./views/features";
 import {showReviews} from "./views/review-list";
 import {setPartnersForm} from "./components/partners-form";
 import {setLandlordFormPopup} from "./components/landlord-form";
+import {Cities} from "./utils/cities";
 
-const FLAT_COUNT = 3;
+
+export let allApartmentsData;
 window.screenWidth = document.documentElement.offsetWidth;
-function render(parentElement, place, template,) {
-    parentElement.insertAdjacentHTML(place, template);
-}
 
 const client = new ApolloClient({
   uri: 'https://apartshering.ru/graphql',
@@ -61,12 +58,18 @@ client.query({
           
               status
             }
+            city {
+              data {
+                title
+              }
+            }
           }
       `,
 })
   .then((data) => {
-
-    showFlats(data.data.apartments.data);
+    const cities = new Cities(data.data.city.data);
+    allApartmentsData = data.data.apartments.data;
+    showDefaultFlats();
     showFAQ(data.data.faq.data);
     showReviews(data.data.feedback.data);
     setAccordions();
@@ -77,17 +80,6 @@ client.query({
   })
   .catch(error => console.error(error));
 
-
-function showFlats(dataFlats) {
-  const flatsList = document.querySelector('.flats__list');
-  if (!flatsList) {
-    return;
-  }
-  for (let i = 0; i < Math.min(FLAT_COUNT, dataFlats.length); i++) {
-    render (flatsList, 'beforeend', createFlatTemplate(dataFlats[i], i));
-  }
-  setFlatListPosition();
-}
 
 setCalc();
 

@@ -12,3 +12,4 @@ source/css/*.map
 vostfond-site
 build
 Thumbs.db
+package-lock.json

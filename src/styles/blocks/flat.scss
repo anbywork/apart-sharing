@@ -1,7 +1,7 @@
 .flat {
   width: 270px;
   min-width: 270px;
-  overflow-x: hidden;
+  overflow: hidden;
   border-radius: 12px;
   background-color: $white;
   box-shadow: 0px 0px 12px rgba(86, 99, 246, 0.16);
@@ -21,12 +21,16 @@
 
 .flat + .flat {
   margin-left: 16px;
+  @media screen and (min-width: $ipad) {
+    margin-left: 0;
+  }
 }
 
 .flat__img-container {
   overflow: hidden;
   min-width: 270px;
   max-height: 220px;
+  border-radius: 12px 12px 0 0;
   @media screen and (min-width: $iphone11) {
     width: 295px;
     min-width: 295px;
@@ -45,6 +49,7 @@
   min-width: 270px;
   object-fit: cover;
   max-height: 250px;
+  border-radius: 12px 12px 0 0;
   @media screen and (min-width: $iphone11) {
     min-width: 295px;
   }

@@ -1,0 +1,54 @@
+.cities {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  padding: 20px;
+  width: 350px;
+  max-width: 100%;
+  background-color: $white;
+  box-shadow: 0px 0px 24px 10px rgba(86, 99, 246, 0.16);
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.cities__list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+}
+
+.city + .city {
+  margin-top: 12px;
+}
+
+.city__radio-indicator {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  background-color: $light-grey;
+  border-radius: 12px;
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: rgba($blue, 0.1);
+    color: $blue;
+  }
+  &:active {
+    background-color: rgba($blue, 0.2);
+    color: $blue;
+  }
+}
+
+input:checked ~ .city__radio-indicator {
+  cursor: auto;
+  background-color: $blue;
+  color: $white;
+  
+}
