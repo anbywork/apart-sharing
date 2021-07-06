@@ -72,14 +72,28 @@
   line-height: 20px;
 }
 
-.flat__rating {
+.flat__rating-and-reviews {
   position: relative;
-
+  padding-left: 35px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
     content: '';
     width: 30px;
     height: 30px;
+    background-image: url("/img/decoration/sprite.svg");
+    background-repeat: no-repeat;
+    background-position: -210px 0;
   }
+}
+
+.flat__rating {
+  margin-right: 5px;
 }
 
 .flat__reviews {

@@ -43,7 +43,7 @@ export const createFlatTemplate = (flat, flatIndex) => {
                 </ul>
             </div>
             <div class="flat__description">
-                <div>
+                <div class="flat__rating-and-reviews">
                     <span class="flat__rating">${rating}</span> 
                     <span class="flat__reviews">(${reviewsCount} отзывов)</span>
                 </div>
