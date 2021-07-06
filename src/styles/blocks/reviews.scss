@@ -43,23 +43,24 @@
 .review {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 12px;
   margin-bottom: 10px;
-  min-width: 270px;
   border-radius: 4px;
   box-shadow: 0px 0px 8px rgba(86, 99, 246, 0.16);
   background: #FFFFFF;
+  flex-shrink: 0;
+  width: calc(100% - 40px);
   
   @media screen and (min-width: $iphone11) {
-    min-width: 295px;
+    width: calc(100% - 60px);
   }
   
   @media screen and (min-width: $ipad) {
-    min-width: 216px;
+    width: 30%;
   }
   
   @media screen and (min-width: $ipadpro) {
-    width: 300px;
+  
   }
   
   
@@ -80,49 +81,53 @@
   }
 }
 
-.review-footer {
+.review__info {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  margin-top: auto;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: $dark;
 }
 
-.review-footer__rating {
+.review__rating-and-name {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
   position: relative;
-  display: block;
   padding-left: 30px;
-  padding-top: 5px;
-  margin-right: 12px;
-  min-height: 30px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
-  color: $dark;
-  
   &::before {
     position: absolute;
     content: '';
-    top: 0;
-    left: 0;
+    top: -3px;
+    left: -4px;
     width: 30px;
     height: 30px;
     background-image: url("/img/decoration/sprite.svg");
-    background-position: 0 0;
-    
+    background-position: -210px 0;
   }
 }
 
-.review-footer__name {
-  margin-right: auto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+.review__rating {
+  padding-top: 5px;
+  margin-right: 12px;
+  min-height: 30px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
   color: $dark;
 }
 
-.review-footer__data {
-  margin-left: auto;
+.review__name {
   font-weight: 500;
   font-size: 12px;
-  line-height: 12px;
+  line-height: 16px;
+  color: $dark;
+}
+
+.review__date {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
 }

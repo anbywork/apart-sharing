@@ -34,12 +34,12 @@ client.query({
                 question
               }
             }
-            feedback{
+            feedback {
               data {
                 message
                 fio
                 review_score
-                
+                created_at
               }
             }
             apartments {

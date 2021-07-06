@@ -4,9 +4,11 @@
   "dependencies": {
     "apollo-boost": "^0.4.9",
     "csscomb": "^4.3.0",
+    "dayjs": "^1.10.6",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.11.0",
     "gulp-uglify-es": "^2.0.0",
+    "imask": "^6.1.0",
     "jquery": "^3.5.1",
     "lvovich": "^1.0.16",
     "moment": "^2.29.1",

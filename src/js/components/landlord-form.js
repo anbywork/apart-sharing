@@ -1,4 +1,5 @@
 import ApolloClient from 'apollo-boost';
+import IMask from 'imask';
 import gql from 'graphql-tag';
 import {getSuccessPopup} from "../views/popup";
 import {getErrorPopup} from "../views/popup";
