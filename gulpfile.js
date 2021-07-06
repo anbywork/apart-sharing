@@ -201,6 +201,6 @@ task('watch', ()=> {
 });
 
 task('default', series('clean', parallel('images-min', 'html', 'webpack', 'sassToCss'), parallel('watch', 'browserSync')));
-task('build', series('clean', parallel('images-min', 'html', 'webpack', 'sassToCssProd'), parallel('watch', 'browserSync')));
+task('build', series('clean', parallel('images-min', 'html', 'webpack', 'sassToCssProd')));
 
 
