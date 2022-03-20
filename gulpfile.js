@@ -50,21 +50,13 @@ const packages = {
   groupMedia:  require('gulp-group-css-media-queries'),
   gulpRename: require('gulp-rename'),
 
-  gulpMinJs: require('gulp-uglify-es').default,
-  babel: require('gulp-babel'),
   webpack: require('webpack'),
   gulpUtil: require('gulp-util'),
   notifier: require('node-notifier'),
 
   imgMin: require('gulp-image'),
-  svgo: require('gulp-svgo'),
 
-  ttf2woff: require('gulp-ttf2woff'),
-  ttf2woff2: require('gulp-ttf2woff2'),
-  fonter: require('gulp-fonter'),
   fileSystem: require('fs'),
-
-  gulpif: require('gulp-if'),
 
   browserSync: require('browser-sync').create(),
 };
@@ -97,28 +89,6 @@ task('images-min', ()=> {
     .pipe(dest(PATH.build.img))
     .pipe(packages.browserSync.reload({stream: true}));
 });
-
-
-task('fontsTtf2Woff', ()=> {
-  src(PATH.src.fonts)
-    .pipe(packages.ttf2woff())
-    .pipe(dest(PATH.build.fonts));
-  return src(PATH.src.fonts)
-    .pipe(packages.ttf2woff2())
-    .pipe(dest(PATH.build.fonts));
-})
-
-task('fontsOtf2Ttf', ()=> {
-  return src(SOURCE_FOLDER + '/fonts/*.otf')
-    .pipe(packages.fonter({
-      formats: ['ttf']
-    }))
-    .pipe(dest(SOURCE_FOLDER + '/fonts/'))
-})
-
-task('copyfonts', () => {
-  return src(SOURCE_FOLDER + '/fonts/*.woff*').pipe(dest(PATH.build.fonts));
-})
 
 task('webpack', (done) => {
   packages.webpack(webpackConfig, onComplete);
