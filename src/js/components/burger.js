@@ -8,11 +8,17 @@ export const setBurger = () => {
     burgerBtn.addEventListener('click', onClickBurgerBtn);
 
     function onClickBurgerBtn (evt) {
+        burgerBtn.disabled = true;
+        setTimeout(()=> {
+            burgerBtn.disabled = false;
+        },300);
+
         if(this.classList.contains('page-header__burger--opened')) {
             closeNav();
         } else {
             openNav();
         }
+
     }
 
     function openNav() {
@@ -24,7 +30,7 @@ export const setBurger = () => {
 
         document.addEventListener('keydown', onDocumentKeyDown);
         document.addEventListener('click', onDocumentClick);
-        document.querySelector('main').classList.add('darken');
+        document.body.classList.add('darken');
     }
 
     function closeNav() {
@@ -34,6 +40,7 @@ export const setBurger = () => {
         startScroll();
         document.removeEventListener('keydown', onDocumentKeyDown);
         document.removeEventListener('click', onDocumentClick);
+        document.body.classList.remove('darken');
         setTimeout(function() {
             navigationMenu.classList.remove('page-header__nav--closed');
         }, 300);

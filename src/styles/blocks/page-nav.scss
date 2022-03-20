@@ -32,6 +32,7 @@
   background-image: url("/img/decoration/how-it-works/cloud.svg");
   background-repeat: no-repeat;
   animation: clouds 5s linear both alternate infinite;
+  z-index: 1;
   @media screen and (min-width: $ipadpro) {
     top: 130px;
   }
@@ -75,6 +76,7 @@
 
 .page-nav__list {
   @include reset-list;
+  z-index: 10;
 }
 
 .page-nav__item + .page-nav__item {
@@ -106,6 +108,7 @@
 .page-nav .btn-list {
   margin-top: 40px;
   align-items: stretch;
+  flex-direction: column;
   @media screen and (min-width: $ipad) {
     margin-top: 60px;
   }
@@ -115,14 +118,15 @@
   @media screen and (min-width: $desktop) {
     margin-top: 60px;
     flex-direction: column;
-    
-    & li + li {
-      margin-top: 20px;
-      margin-left: 0;
-    }
   }
 }
 
 .page-nav .btn {
   border: 1px solid $white;
+}
+
+.page-nav .btn--appstore,
+.page-nav .btn--googleplay {
+  margin-bottom: 20px;
+  margin-right: 0;
 }

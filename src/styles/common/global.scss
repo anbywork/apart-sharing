@@ -45,7 +45,10 @@ a,
 
 .darken {
   position: relative;
+  
   &::after {
+    content: '';
+    background-color: $dark70;
     position: absolute;
     top: 0;
     left: 0;

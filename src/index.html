@@ -75,255 +75,258 @@
   <button class="page-header__burger"><span class="visually-hidden">Показать навигацию</span></button>
 </header>
 <main>
-  <section class="description">
-    <div class="description__wrapper">
-      <div class="description__img">
-        <picture>
-          <source media="(min-width: 768px)" srcset="/img/content/appstart-ipad.jpg, /img/content/appstart-ipad@2x.jpg 2x">
-          <source media="(min-width: 1024px)" srcset="/img/content/appstart-ipadpro.jpg, /img/content/appstart-ipadpro@2x.jpg 2x">
-          <source media="(min-width: 1170px)" srcset="/img/content/appstart-ipad.jpg, /img/content/appstart-ipad@2x.jpg 2x">
-          <img src="/img/content/appstart-320.jpg" srcset="/img/content/appstart-320@2x.jpg 2x" alt="">
-        </picture>
-        
-      </div>
-      <div class="description__content">
-        <h1 class="description__title">Бесконтактная аренда жилья в&nbsp;вашем смартфоне</h1>
-        @@include('html-blocks/_btn-list.html')
-      </div>
-    </div>
-    
-  </section>
-  <section class="flats section" id="flats">
-    <h2 class="section__title flats__title">Снять квартиру <div class="flats__cities-container"><button class="flats__city-btn" type="button">в Москве</button></div></h2>
-    <div class="flats__list-container">
-      <ul class="flats__list"></ul>
-    </div>
-    @@include('html-blocks/_btn-list.html')
-  </section>
-  <section class="how-it-works section" id="how-it-works">
-    <div class="content-wrapper">
-      <div class="how-it-works__header">
-        <h2 class="section__title">Как это работает</h2>
-        <p>Мы сделали все, чтобы вам было удобно. Если что-то будет непонятно, вы всегда можете обратиться в техподдержку</p>
-      </div>
+  <div class='main-content-wrapper'>
+    <section class="description">
+      <div class="description__wrapper">
+        <div class="description__img">
+          <picture>
+            <source media="(min-width: 768px)" srcset="/img/content/appstart-ipad.jpg, /img/content/appstart-ipad@2x.jpg 2x">
+            <source media="(min-width: 1024px)" srcset="/img/content/appstart-ipadpro.jpg, /img/content/appstart-ipadpro@2x.jpg 2x">
+            <source media="(min-width: 1170px)" srcset="/img/content/appstart-ipad.jpg, /img/content/appstart-ipad@2x.jpg 2x">
+            <img src="/img/content/appstart-320.jpg" srcset="/img/content/appstart-320@2x.jpg 2x" alt="">
+          </picture>
       
-      <ul class="how-it-works__step-list">
-        <li class="how-it-works__step">
-          <h3><span class="how-it-works__step--accent">Установите приложение</span> на&nbsp;смартфон</h3>
-        </li>
-        <li class="how-it-works__step">
-          <h3>Выберите квартиру и <span class="how-it-works__step--accent">оплатите аренду</span> на&nbsp;нужные даты&nbsp;и время</h3>
-        </li>
-        <li class="how-it-works__step">
-          <h3>Подойдите к подъезду и в приложении нажмите кнопку
-            <span class="how-it-works__step--accent">Открыть домофон</span>.</h3>
-          <p>Домофон откроет дверь автоматически</p>
-        </li>
-        <li class="how-it-works__step">
-          <h3>Когда подойдете к квартире нажмите кнопку <span class="how-it-works__step--accent">Открыть квартиру</span></h3>
-          <p>Приложение откроет электронный замок</p>
-        </li>
-        <li class="how-it-works__step">
-          <h3>Когда вам нужно будет временно уйти, воспользуйтесь кнопками <span class="how-it-works__step--accent">Закрыть / Открыть квартиру</span></h3>
-        </li>
-        <li class="how-it-works__step">
-          <h3>При выезде нажмите кнопку <span class="how-it-works__step--accent">Завершить аредну</span></h3>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="flat-features section" id="flats-features">
-    <h2 class="section__title">В&nbsp;каждой квартире есть&nbsp;wi&#8209;fi</h2>
-    <p>А еще стиральная машина, кровать с&nbsp;белоснежным бельем и&nbsp;кухня.</p>
-    <p>Также при подборе вы можете выбрать класс квартиры, количество комнат и посмотреть, что еще есть&nbsp;в&nbsp;квартире.</p>
-  </section>
-  <section class="reviews section" id="reviews">
-    <div class="content-wrapper">
-      <h2 class="section__title">Отзывы тех,<br> кто уже воспользовался сервисом</h2>
-    </div>
-    <div class="reviews__list-container">
-      <ul class="reviews__list">
-      </ul>
-    </div>
+        </div>
+        <div class="description__content">
+          <h1 class="description__title">Бесконтактная аренда жилья в&nbsp;вашем смартфоне</h1>
+          <p class='description__text'>Скачайте приложение:</p>
+          @@include('html-blocks/_btn-list.html')
+        </div>
+      </div>
   
-  </section>
-  <section class="features section slider" id="functions">
-    <div class="features__content">
-      <h2 class="section__title">Что еще можно<br> делать в&nbsp;приложении?</h2>
-      <div class="slider__list-container features__list-container">
-        <ul class="features__list slider__list">
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value" checked>
-              <img src="/img/content/features/favorites.png" alt="">
-              <span>Добавлять квартиры<br> в&nbsp;избранное</span>
-              
-            </label>
-          </li>
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value">
-              <img src="/img/content/features/history.png" alt="">
-              <span>Смотреть<br> историю заказов</span>
-              
-            </label>
-          </li>
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value">
-              <img src="/img/content/features/docs.png" alt="">
-              <span>Скачивать документы,<br> подтверждающие оплату</span>
-              
-            </label>
-          </li>
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value">
-              <img src="/img/content/features/cards.png" alt="">
-              <span>Добавлять несколько карт<br> для оплаты</span>
-              
-            </label>
-          </li>
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value">
-              <img src="img/content/features/news.png" alt="">
-              <span>Читать<br> новости проекта</span>
-              
-            </label>
-          </li>
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value">
-              <img src="/img/content/features/brakes.png" alt="">
-              <span>Добавлять информацию<br> о поломках</span>
-              
-            </label>
-          </li>
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value">
-              <img src="/img/content/features/support.png" alt="">
-              <span>Связываться<br> с техподдержкой</span>
-              
-            </label>
-          </li>
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value">
-              <img src="/img/content/features/feedback.png" alt="">
-              <span>Оставлять отзывы <br> о квартирах</span>
-              
-            </label>
-          </li>
-          <li class="features__item">
-            <label>
-              <input class="visually-hidden" type="radio" name="feature-value">
-              <img src="/img/content/features/reviews.png" alt="">
-              <span>Смотреть отзывы<br> других пользователей</span>
-              
-            </label>
-          </li>
-        </ul>
-        <ul class="slider__controls">
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="0" checked>
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="1">
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="2">
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="3">
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="4">
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="5">
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="6">
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="7">
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input class="visually-hidden" type="radio" name="feature" value="8">
-              <span class="slider__radio-indicator"></span>
-            </label>
-          </li>
-        </ul>
+    </section>
+    <section class="flats section" id="flats">
+      <h2 class="section__title flats__title">Снять квартиру <div class="flats__cities-container"><button class="flats__city-btn" type="button">в Москве</button></div></h2>
+      <div class="flats__list-container">
+        <ul class="flats__list"></ul>
       </div>
       @@include('html-blocks/_btn-list.html')
-      
-    </div>
-    
-  </section>
-  <section class="faq section" id="faq">
-    <div class="content-wrapper">
-      <h2 class="section__title content-wrapper">Часто задаваемые вопросы</h2>
-      <ul class="faq__list accordion">
-      </ul>
-    </div>
-    
-  </section>
-  <section class="cta section" id="support">
-    <h2 class="section__title">Установите приложение</h2>
-    <p class="cta__description"></p>
-    @@include('html-blocks/_btn-list.html')
-  </section>
-  <div class="more-info">
-    
-    <section class="landlord section content-wrapper">
-      <h2 class="section__title">Сдайте выгодно квартиру&nbsp;посуточно </h2>
-      <p>И зарабатывайте до&nbsp;2&nbsp;раз больше ежемесячной&nbsp;аренды</p>
-      <button class="btn" type="button"><span>Оставить заявку</span></button>
-      
     </section>
-    <section class="partners-section section content-wrapper">
-      <h2 class="section__title">Станьте<br> партнером</h2>
-      <p>и&nbsp;зарабатывайте от&nbsp;1&nbsp;млн&nbsp;рублей в&nbsp;своем городе</p>
-      <a class="btn" href="/partners.html"><span>Оставить заявку</span></a>
+    <section class="how-it-works section" id="how-it-works">
+      <div class="content-wrapper">
+        <div class="how-it-works__header">
+          <h2 class="section__title">Как это работает</h2>
+          <p>Мы сделали все, чтобы вам было удобно. Если что-то будет непонятно, вы всегда можете обратиться в техподдержку</p>
+        </div>
+      
+        <ul class="how-it-works__step-list">
+          <li class="how-it-works__step">
+            <h3><span class="how-it-works__step--accent">Установите приложение</span> на&nbsp;смартфон</h3>
+          </li>
+          <li class="how-it-works__step">
+            <h3>Выберите квартиру и <span class="how-it-works__step--accent">оплатите аренду</span> на&nbsp;нужные даты&nbsp;и время</h3>
+          </li>
+          <li class="how-it-works__step">
+            <h3>Подойдите к подъезду и в приложении нажмите кнопку
+              <span class="how-it-works__step--accent">Открыть домофон</span>.</h3>
+            <p>Домофон откроет дверь автоматически</p>
+          </li>
+          <li class="how-it-works__step">
+            <h3>Когда подойдете к квартире нажмите кнопку <span class="how-it-works__step--accent">Открыть квартиру</span></h3>
+            <p>Приложение откроет электронный замок</p>
+          </li>
+          <li class="how-it-works__step">
+            <h3>Когда вам нужно будет временно уйти, воспользуйтесь кнопками <span class="how-it-works__step--accent">Закрыть / Открыть квартиру</span></h3>
+          </li>
+          <li class="how-it-works__step">
+            <h3>При выезде нажмите кнопку <span class="how-it-works__step--accent">Завершить аредну</span></h3>
+          </li>
+        </ul>
+      </div>
     </section>
-    
-  </div>
+    <section class="flat-features section" id="flats-features">
+      <h2 class="section__title">В&nbsp;каждой квартире есть&nbsp;wi&#8209;fi</h2>
+      <p>А еще стиральная машина, кровать с&nbsp;белоснежным бельем и&nbsp;кухня.</p>
+      <p>Также при подборе вы можете выбрать класс квартиры, количество комнат и посмотреть, что еще есть&nbsp;в&nbsp;квартире.</p>
+    </section>
+    <section class="reviews section" id="reviews">
+      <div class="content-wrapper">
+        <h2 class="section__title">Отзывы тех,<br> кто уже воспользовался сервисом</h2>
+      </div>
+      <div class="reviews__list-container">
+        <ul class="reviews__list">
+        </ul>
+      </div>
   
-  <section class="support section">
-    <h2 class="section__title">Техподдержка</h2>
-    <ul class="support__list">
-      <li><a class="support__btn support__btn--phone" href="tel:88001000607">+ 8 800 100 06 07</a></li>
-      <li><a class="support__btn support__btn--whatsapp" href="https://wa.me/79141507777">Чат в WhatsApp</a></li>
-      <li><a class="support__btn support__btn--email" href="mailto:support@apartsharing.com">support@apartsharing.com</a></li>
-    </ul>
-  </section>
+    </section>
+    <section class="features section slider" id="functions">
+      <div class="features__content">
+        <h2 class="section__title">Что еще можно<br> делать в&nbsp;приложении?</h2>
+        <div class="slider__list-container features__list-container">
+          <ul class="features__list slider__list">
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value" checked>
+                <img src="/img/content/features/favorites.png" alt="">
+                <span>Добавлять квартиры<br> в&nbsp;избранное</span>
+            
+              </label>
+            </li>
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value">
+                <img src="/img/content/features/history.png" alt="">
+                <span>Смотреть<br> историю заказов</span>
+            
+              </label>
+            </li>
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value">
+                <img src="/img/content/features/docs.png" alt="">
+                <span>Скачивать документы,<br> подтверждающие оплату</span>
+            
+              </label>
+            </li>
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value">
+                <img src="/img/content/features/cards.png" alt="">
+                <span>Добавлять несколько карт<br> для оплаты</span>
+            
+              </label>
+            </li>
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value">
+                <img src="img/content/features/news.png" alt="">
+                <span>Читать<br> новости проекта</span>
+            
+              </label>
+            </li>
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value">
+                <img src="/img/content/features/brakes.png" alt="">
+                <span>Добавлять информацию<br> о поломках</span>
+            
+              </label>
+            </li>
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value">
+                <img src="/img/content/features/support.png" alt="">
+                <span>Связываться<br> с техподдержкой</span>
+            
+              </label>
+            </li>
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value">
+                <img src="/img/content/features/feedback.png" alt="">
+                <span>Оставлять отзывы <br> о квартирах</span>
+            
+              </label>
+            </li>
+            <li class="features__item">
+              <label>
+                <input class="visually-hidden" type="radio" name="feature-value">
+                <img src="/img/content/features/reviews.png" alt="">
+                <span>Смотреть отзывы<br> других пользователей</span>
+            
+              </label>
+            </li>
+          </ul>
+          <ul class="slider__controls">
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="0" checked>
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="1">
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="2">
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="3">
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="4">
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="5">
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="6">
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="7">
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="visually-hidden" type="radio" name="feature" value="8">
+                <span class="slider__radio-indicator"></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        @@include('html-blocks/_btn-list.html')
+    
+      </div>
+  
+    </section>
+    <section class="faq section" id="faq">
+      <div class="content-wrapper">
+        <h2 class="section__title content-wrapper">Часто задаваемые вопросы</h2>
+        <ul class="faq__list accordion">
+        </ul>
+      </div>
+  
+    </section>
+    <section class="cta section" id="support">
+      <h2 class="section__title">Установите приложение</h2>
+      <p class="cta__description"></p>
+      @@include('html-blocks/_btn-list.html')
+    </section>
+    <div class="more-info">
+    
+      <section class="landlord section content-wrapper">
+        <h2 class="section__title">Сдайте выгодно квартиру&nbsp;посуточно </h2>
+        <p>И зарабатывайте до&nbsp;2&nbsp;раз больше ежемесячной&nbsp;аренды</p>
+        <button class="btn" type="button"><span>Оставить заявку</span></button>
+    
+      </section>
+      <section class="partners-section section content-wrapper">
+        <h2 class="section__title">Станьте<br> партнером</h2>
+        <p>и&nbsp;зарабатывайте от&nbsp;1&nbsp;млн&nbsp;рублей в&nbsp;своем городе</p>
+        <a class="btn" href="/partners.html"><span>Оставить заявку</span></a>
+      </section>
+  
+    </div>
+  
+    <section class="support section">
+      <h2 class="section__title">Техподдержка</h2>
+      <ul class="support__list">
+        <li><a class="support__btn support__btn--phone" href="tel:88001000607">+ 8 800 100 06 07</a></li>
+        <li><a class="support__btn support__btn--whatsapp" href="https://wa.me/79141507777">Чат в WhatsApp</a></li>
+        <li><a class="support__btn support__btn--email" href="mailto:support@apartsharing.com">support@apartsharing.com</a></li>
+      </ul>
+    </section>
+  </div>
 </main>
 <footer class="footer">
   <p class="footer__legal">ИП Слободянюк Данил Андреевич <br>ИНН: 253102220449 <br>ОГРНИП: 319272400058541</p>

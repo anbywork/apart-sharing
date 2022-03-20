@@ -169,7 +169,7 @@
   }
   @media screen and (min-width: $ipad) {
     order: 1;
-    width: 370px;
+    width: 500px;
   }
   @media screen and (min-width: $ipadpro) {
     padding-left: 40px;
@@ -206,7 +206,7 @@
 .description__title {
   @include reset;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   text-align: center;
   font-weight: bold;
   font-size: 25px;
@@ -232,16 +232,13 @@
 
 .description__text {
   @include reset;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
   font-weight: normal;
   font-size: 16px;
   line-height: 25px;
   text-align: center;
   @media screen and (min-width: $iphone11) {
     text-align: left;
-  }
-  @media screen and (min-width: $ipad) {
-    margin-bottom: 100px;
   }
   @media screen and (min-width: $desktop) {
     font-size: 24px;

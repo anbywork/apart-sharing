@@ -5,10 +5,12 @@ export const setBtnsList = () => {
         const btnsList = btnsLists[i];
         const appStoreBtn = btnsList.querySelector('.btn--appstore');
         const googlePlayBtn = btnsList.querySelector('.btn--googleplay');
+        const appGallery = btnsList.querySelector('.btn--appgallery');
 
 
         if (os === 'iOS') {
             googlePlayBtn.style.display = 'none';
+            appGallery.style.display = 'none';
         } else if (os === 'Android') {
             appStoreBtn.style.display = 'none';
         }
