@@ -105,7 +105,7 @@
 
 .page-nav .btn-list {
   margin-top: 40px;
-  align-items: flex-start;
+  align-items: stretch;
   @media screen and (min-width: $ipad) {
     margin-top: 60px;
   }
@@ -124,8 +124,5 @@
 }
 
 .page-nav .btn {
-  & span {
-    background-color: transparent;
-    border: 1px solid $white;
-  }
+  border: 1px solid $white;
 }

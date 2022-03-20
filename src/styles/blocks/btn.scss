@@ -1,43 +1,54 @@
 .btn {
   @include reset;
-  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  min-width: 150px;
+  min-height: 50px;
+  background-color: $blue;
   box-shadow: none;
+  border-radius: 12px;
   border: none;
+  font: inherit;
+  color: $white;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  transition: background-color 200ms ease-in-out;
+  
 
-  & span {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    width: 240px;
-    min-height: 56px;
-    background-color: $blue;
-    box-shadow: inset 4px 4px 4px rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    border: none;
-    font: inherit;
-    color: $white;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  &:hover span,
-  &:focus span {
+  &:hover,
+  &:focus {
     background-color: darken($blue, 10%);
+    color: $white;
+    text-decoration: none;
   }
+}
+
+.btn svg {
+  margin-right: 12px;
 }
 
 .btn--outline {
-  & span {
-    background-color: transparent;
-    border: 1px solid $white;
-  }
-
+  background-color: transparent;
+  border: 1px solid $white;
 }
 
-.btn--googleplay span {
+.btn--appstore,
+.btn--googleplay {
+  margin-bottom: 10px;
+  @media screen and (min-width: $iphone11) {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+
+.btn--googleplay {
   background-color: $dark;
 }
 
+.btn--appgallery {
+  background: linear-gradient(180deg, #FB6361 0%, #ED3E45 100%);
+}

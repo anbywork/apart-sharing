@@ -75,4 +75,11 @@
   }
 }
 
+.flats .btn-list {
+  justify-content: center;
+  @media screen and (min-width: $ipad) {
+    justify-content: flex-start;
+  }
+}
+
 
