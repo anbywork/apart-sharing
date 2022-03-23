@@ -9,7 +9,14 @@ export const createFlatTemplate = (flat, flatIndex) => {
   const getImages = () => {
     let imagesHTML = '';
     for (let i = 0; i < images.length; i++) {
-      imagesHTML += `<li class="flat__img-container"><img class="flat__img" src="https://apartshering.ru/${images[i]['image_png']}" alt=""></li>`
+      imagesHTML += `<li class="flat__img-container">
+                      <img 
+                        class="flat__img preloader" 
+                        src="https://apartshering.ru/${images[i]['image_png']}" 
+                        alt=""  
+                        width='300'
+                        height='250'>
+                      </li>`
     }
     return imagesHTML;
   }

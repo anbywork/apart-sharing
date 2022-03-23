@@ -14,22 +14,49 @@
   border-radius: 12px;
   font-size: 16px;
   line-height: 20px;
+  @media screen and (min-width: $ipad) {
+    padding: 40px;
+    width: 700px;
+    max-width: none;
+  }
+}
+
+.cities__title {
+  margin: 0;
+  margin-bottom: 20px;
+  @media screen and (min-width: $ipad) {
+    margin-bottom: 40px;
+    
+    & br {
+      display: none;
+    }
+    
+  }
 }
 
 .cities__list {
   @include reset-list;
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: $ipad) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
 }
 
 .city + .city {
   margin-top: 12px;
+  @media screen and (min-width: $ipad) {
+    margin-top: 0;
+  }
 }
 
 .city__radio-indicator {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 12px;
   background-color: $light-grey;
@@ -43,6 +70,10 @@
   &:active {
     background-color: rgba($blue, 0.2);
     color: $blue;
+  }
+  
+  @media screen and (min-width: $ipad) {
+    height: 100%;
   }
 }
 

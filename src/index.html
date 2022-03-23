@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <title>Apart Sharing — бесконтактная аренда жилья в вашем смартфоне</title>
   <link rel="preload" as="style" href="/styles/main.min.css" />
-  <link rel="preload" as="image" href="/img/decoration/main-img.jpg" />
+<!--  <link rel="preload" as="image" href="/img/decoration/main-img.jpg" />-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.min.css">
@@ -83,7 +83,7 @@
             <source media="(min-width: 768px)" srcset="/img/content/appstart-ipad.jpg, /img/content/appstart-ipad@2x.jpg 2x">
             <source media="(min-width: 1024px)" srcset="/img/content/appstart-ipadpro.jpg, /img/content/appstart-ipadpro@2x.jpg 2x">
             <source media="(min-width: 1170px)" srcset="/img/content/appstart-ipad.jpg, /img/content/appstart-ipad@2x.jpg 2x">
-            <img src="/img/content/appstart-320.jpg" srcset="/img/content/appstart-320@2x.jpg 2x" alt="">
+            <img class='preloader' src="/img/content/appstart-320.jpg" srcset="/img/content/appstart-320@2x.jpg 2x" alt="" loading='lazy' width='146' height='316'>
           </picture>
       
         </div>
@@ -93,12 +93,15 @@
           @@include('html-blocks/_btn-list.html')
         </div>
       </div>
-  
     </section>
     <section class="flats section" id="flats">
       <h2 class="section__title flats__title">Снять квартиру <div class="flats__cities-container"><button class="flats__city-btn" type="button">в Москве</button></div></h2>
       <div class="flats__list-container">
-        <ul class="flats__list"></ul>
+        <ul class="flats__list">
+          <li class="flats__object flat preloader"></li>
+          <li class="flats__object flat preloader"></li>
+          <li class="flats__object flat preloader"></li>
+        </ul>
       </div>
       @@include('html-blocks/_btn-list.html')
     </section>
@@ -157,15 +160,14 @@
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value" checked>
-                <img src="/img/content/features/favorites.png" alt="">
+                <img class='preloader' src="/img/content/features/favorites.png" alt="" loading='lazy' width='146' height='316'>
                 <span>Добавлять квартиры<br> в&nbsp;избранное</span>
-            
               </label>
             </li>
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value">
-                <img src="/img/content/features/history.png" alt="">
+                <img class='preloader'  src="/img/content/features/history.png" alt=""  loading='lazy' width='146' height='316'>
                 <span>Смотреть<br> историю заказов</span>
             
               </label>
@@ -173,7 +175,7 @@
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value">
-                <img src="/img/content/features/docs.png" alt="">
+                <img class='preloader'  src="/img/content/features/docs.png" alt="" loading='lazy' width='146' height='316'>
                 <span>Скачивать документы,<br> подтверждающие оплату</span>
             
               </label>
@@ -181,7 +183,7 @@
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value">
-                <img src="/img/content/features/cards.png" alt="">
+                <img class='preloader'  src="/img/content/features/cards.png" alt="" loading='lazy' width='146' height='316'>
                 <span>Добавлять несколько карт<br> для оплаты</span>
             
               </label>
@@ -189,7 +191,7 @@
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value">
-                <img src="img/content/features/news.png" alt="">
+                <img class='preloader'  src="img/content/features/news.png" alt="" loading='lazy' width='146' height='316'>
                 <span>Читать<br> новости проекта</span>
             
               </label>
@@ -197,7 +199,7 @@
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value">
-                <img src="/img/content/features/brakes.png" alt="">
+                <img class='preloader'  src="/img/content/features/brakes.png" alt="" loading='lazy' width='146' height='316'>
                 <span>Добавлять информацию<br> о поломках</span>
             
               </label>
@@ -205,7 +207,7 @@
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value">
-                <img src="/img/content/features/support.png" alt="">
+                <img class='preloader'  src="/img/content/features/support.png" alt="" loading='lazy' width='146' height='316'>
                 <span>Связываться<br> с техподдержкой</span>
             
               </label>
@@ -213,7 +215,7 @@
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value">
-                <img src="/img/content/features/feedback.png" alt="">
+                <img class='preloader'  src="/img/content/features/feedback.png" alt="" loading='lazy' width='146' height='316'>
                 <span>Оставлять отзывы <br> о квартирах</span>
             
               </label>
@@ -221,7 +223,7 @@
             <li class="features__item">
               <label>
                 <input class="visually-hidden" type="radio" name="feature-value">
-                <img src="/img/content/features/reviews.png" alt="">
+                <img class='preloader'  src="/img/content/features/reviews.png" alt=""  loading='lazy' width='146' height='316'>
                 <span>Смотреть отзывы<br> других пользователей</span>
             
               </label>
@@ -303,7 +305,6 @@
       @@include('html-blocks/_btn-list.html')
     </section>
     <div class="more-info">
-    
       <section class="landlord section content-wrapper">
         <h2 class="section__title">Сдайте выгодно квартиру&nbsp;посуточно </h2>
         <p>И зарабатывайте до&nbsp;2&nbsp;раз больше ежемесячной&nbsp;аренды</p>
@@ -315,7 +316,6 @@
         <p>и&nbsp;зарабатывайте от&nbsp;1&nbsp;млн&nbsp;рублей в&nbsp;своем городе</p>
         <a class="btn" href="/partners.html"><span>Оставить заявку</span></a>
       </section>
-  
     </div>
   
     <section class="support section">
@@ -335,6 +335,16 @@
     <a class="footer__link" href="">Пользовательское соглашение</a>
   </div>
 </footer>
+
 <script src="/js/bundle.js"></script>
+<script>
+  // preloader for images
+  const imgElements = document.querySelectorAll('img');
+  for (let img of imgElements) {
+    img.addEventListener('complete', () => {
+      img.classList.remove('preloader');
+    });
+  }
+</script>
 </body>
 </html>

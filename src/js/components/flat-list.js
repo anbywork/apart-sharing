@@ -1,6 +1,7 @@
 import {createFlatTemplate} from "../views/flat";
 import {render} from "../utils/render";
 import {allApartmentsData} from "../main";
+import {createElement} from "../utils/render";
 
 const FLAT_COUNT = 50;
 export const DEFAULT_CITY = 'Москва';
@@ -25,7 +26,17 @@ export const showFlats = (dataFlats) => {
   }
   flatsList.innerHTML = ``;
   for (let i = 0; i < Math.min(dataFlats.length, FLAT_COUNT); i++) {
-    render (flatsList, 'beforeend', createFlatTemplate(dataFlats[i], i));
+    const flatTemplate = createFlatTemplate(dataFlats[i], i);
+    const flatElement = createElement(flatTemplate);
+    render (flatsList, 'beforeend', flatTemplate);
+
+    // вешаем прелоадер на картинки
+    const imgElements = flatElement.querySelectorAll('img');
+    for (let img of imgElements) {
+      img.addEventListener('complete', () => {
+        img.classList.remove('preloader');
+      });
+    }
   }
   setFlatListPosition();
 }
