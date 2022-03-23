@@ -17,6 +17,7 @@
 }
 
 .slider__list {
+  align-items: flex-start;
   position: relative;
   transition: left;
   transition-timing-function: ease-in-out;
