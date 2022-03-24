@@ -1,10 +1,8 @@
 import {createFlatTemplate} from "../views/flat";
 import {render} from "../utils/render";
-import {allApartmentsData} from "../main";
 import {createElement} from "../utils/render";
 
 const FLAT_COUNT = 50;
-export const DEFAULT_CITY = 'Москва';
 
 
 export const setFlatListPosition = () => {
@@ -39,19 +37,4 @@ export const showFlats = (dataFlats) => {
     }
   }
   setFlatListPosition();
-}
-
-export const showDefaultFlats = () => {
-  const data = filterApartment(DEFAULT_CITY);
-  showFlats(data);
-}
-
-export const updateFlats = (city) => {
-  showFlats(filterApartment(city));
-}
-
-const filterApartment = (city) => {
-  return allApartmentsData.filter(apartmentData => {
-    return apartmentData.city === city;
-  });
 }
