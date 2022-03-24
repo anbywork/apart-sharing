@@ -2,7 +2,7 @@ import {createFlatTemplate} from "../views/flat";
 import {render} from "../utils/render";
 import {createElement} from "../utils/render";
 
-const FLAT_COUNT = 50;
+const FLAT_COUNT = 30;
 
 
 export const setFlatListPosition = () => {

@@ -157,7 +157,8 @@ task('browserSync', ()=> {
       baseDir: "./" + BUILD_FOLDER
     },
     port: 3000,
-    open: false
+    open: false,
+    notify: false
   });
 });
 

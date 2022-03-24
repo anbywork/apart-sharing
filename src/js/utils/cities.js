@@ -17,14 +17,15 @@ export class Cities {
     });
     // кнопка, открывающая список городов
     this.flatsCityBtn = document.querySelector('.flats__city-btn');
-    this.flatsCityBtn.addEventListener('click', () => {
-      flatsContainer.append(this.citiesElement);
-      document.addEventListener('keydown', this.documentKeyDownHandler);
-      setTimeout(()=> {
-        document.addEventListener('click', this.documentClickHandler);
+    if (this.flatsCityBtn) {
+      this.flatsCityBtn.addEventListener('click', () => {
+        flatsContainer.append(this.citiesElement);
+        document.addEventListener('keydown', this.documentKeyDownHandler);
+        setTimeout(()=> {
+          document.addEventListener('click', this.documentClickHandler);
         }, 300);
-    });
-
+      });
+    }
 
     for (let cityElement of this.cityElements) {
       this.cityListElement.appendChild(cityElement);

@@ -114,11 +114,15 @@
 .page-header__nav--opened {
   display: flex;
   animation: open-navigation 300ms ease-in both;
+  animation-delay: 1ms;
+  -webkit-animation-delay: 1ms;
 }
 
 .page-header__nav--closed {
   display: flex;
   animation: close-navigation 300ms ease-out both;
+  animation-delay: 1ms;
+  -webkit-animation-delay: 1ms;
 }
 
 

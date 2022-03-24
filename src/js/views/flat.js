@@ -2,51 +2,22 @@ export const createFlatTemplate = (flat, flatIndex) => {
   if (!flat) {
     return;
   }
-  const {apartments_images, rating, reviews_amount, city, street, building, title} = flat;
-  const images = apartments_images;
-  const home = building;
-  const reviewsCount = reviews_amount;
-  const getImages = () => {
-    let imagesHTML = '';
-    for (let i = 0; i < images.length; i++) {
-      imagesHTML += `<li class="flat__img-container">
-                      <img 
-                        class="flat__img preloader" 
-                        src="https://apartshering.ru/${images[i]['image_png']}" 
-                        alt=""  
-                        width='300'
-                        height='250'>
-                      </li>`
-    }
-    return imagesHTML;
-  }
+  const {rating, city, street, title} = flat;
+  const home = flat.building;
+  const reviewsCount = flat.reviews_amount;
 
-  const generateImagesControl = () => {
-    let imagesControlHTML = '';
-    for (let i = 0; i < images.length; i++) {
-      imagesControlHTML +=`<li>
-                    <label>
-                        <input
-                        class="visually-hidden" 
-                        type="radio" 
-                        name="flat-img-slider__control-${flatIndex}" 
-                        value="${i}"
-                        ${i == 0 ? "checked" : ''}>
-                        <span class="slider__radio-indicator"></span>
-                    </label>
-                </li>`;
-    }
-    return imagesControlHTML;
-  }
+
+
+  const imagesTemplates = getImagesTemplates(flat.apartments_images, flatIndex);
   return `<li class="flats__object flat">
             <div class="flat__slider slider">
               <div class="slider__list-container">
                  <ul class="flat-img-slider__list slider__list">
-                    ${getImages()}
+                    ${imagesTemplates.imagesHTML}
                 </ul> 
               </div>
                 <ul class="flat-img-slider__controls slider__controls">
-                    ${generateImagesControl()}
+                    ${imagesTemplates.imagesControlHTML}
                 </ul>
             </div>
             <div class="flat__description">
@@ -58,4 +29,36 @@ export const createFlatTemplate = (flat, flatIndex) => {
                 <p class="flat__address">${city} ${street}, ${home}</p>
             </div>
         </li>`;
+}
+
+function getImagesTemplates (images, flatIndex) {
+  let imagesHTML = '';
+  let imagesControlHTML = '';
+  for (let i = 0; i < images.length; i++) {
+    imagesHTML += `<li class="flat__img-container">
+                      <img 
+                        class="flat__img preloader" 
+                        src="https://apartshering.ru/${images[i]['image_png']}" 
+                        alt=""  
+                        width='300'
+                        height='250'
+                        loading='lazy'>
+                      </li>`;
+
+    imagesControlHTML += `<li>
+                              <label>
+                                  <input
+                                  class="visually-hidden" 
+                                  type="radio" 
+                                  name="flat-img-slider__control-${flatIndex}" 
+                                  value="${i}"
+                                  ${i == 0 ? "checked" : ''}>
+                                  <span class="slider__radio-indicator"></span>
+                              </label>
+                          </li>`;
+  }
+  return {
+    imagesHTML,
+    imagesControlHTML
+  };
 }
