@@ -11,7 +11,7 @@ export const setBurger = () => {
         burgerBtn.disabled = true;
         setTimeout(()=> {
             burgerBtn.disabled = false;
-        },300);
+        },100);
 
         if(this.classList.contains('page-header__burger--opened')) {
             closeNav();

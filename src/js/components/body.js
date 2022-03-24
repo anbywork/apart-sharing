@@ -12,12 +12,15 @@ export const stopScroll = () => {
   window.addEventListener('scroll', onScroll);
   window.scrollValue = window.scrollY;
   setShift(window.scrollValue);
-  body.style.maxWidth = main.clientWidth + 'px';
-  header.style.maxWidth = main.clientWidth + 'px';
-  body.style.maxHeight = document.documentElement.clientHeight + 'px';
-  body.style.overflow = 'hidden';
-  main.style.maxHeight = document.documentElement.clientHeight - footerHeight + 'px';
-  main.style.overflow = 'hidden';
+  setTimeout(()=> {
+    body.style.maxWidth = main.clientWidth + 'px';
+    header.style.maxWidth = main.clientWidth + 'px';
+    body.style.maxHeight = document.documentElement.clientHeight + 'px';
+    body.style.overflow = 'hidden';
+    main.style.maxHeight = document.documentElement.clientHeight - footerHeight + 'px';
+    main.style.overflow = 'hidden';
+  }, 100);
+
 
 }
 
