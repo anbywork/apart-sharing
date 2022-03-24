@@ -19,7 +19,7 @@ export const stopScroll = () => {
     body.style.overflow = 'hidden';
     main.style.maxHeight = document.documentElement.clientHeight - footerHeight + 'px';
     main.style.overflow = 'hidden';
-  }, 100);
+  }, 10);
 
 
 }

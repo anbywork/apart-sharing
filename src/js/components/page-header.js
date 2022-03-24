@@ -7,7 +7,7 @@ function onScrollWindowColorHeader() {
     const pageOffset = document.documentElement.scrollTop;
     if (pageOffset > 50) {
         pageHeader.classList.add('page-header--white');
-    } else {
+    } else if (!document.body.classList.contains('darken')) {
         pageHeader.classList.remove('page-header--white');
     }
 }
