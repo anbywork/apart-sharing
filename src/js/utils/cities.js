@@ -1,11 +1,11 @@
 import {cityIn} from 'lvovich';
-import {showFlatsForTheCity} from "./get-and-show-flats";
+import {showFlatsForTheCity} from "./set-flats";
 
 const flatsContainer = document.querySelector('.flats__cities-container');
 export class Cities {
-  constructor(cityListData, currentCityName) {
+  constructor(cityListData, currentCity) {
     this.cityList = cityListData;
-    this.currentCityName = currentCityName;
+    this.currentCity = currentCity;
     this.citiesElement = this.createElement(this.getCitiesTemplate());
 
     this.cityListElement = this.citiesElement.querySelector('.cities__list');
@@ -55,7 +55,7 @@ export class Cities {
   }
 
   getCityTemplate(cityData) {
-    const checked = cityData.title === this.currentCityName ? 'checked' : '';
+    const checked = cityData.title === this.currentCity.title ? 'checked' : '';
     return `<li class="cities__list-item city">
               <label class="city__label">
                 <input class='visually-hidden' type="radio" name="city" value="${cityData.title}" ${checked} data-id='${cityData.id}'>
@@ -73,10 +73,10 @@ export class Cities {
       </div>
     </div>`
   }
-  changeCity(name) {
+  changeCity(city) {
     const cityBtn = document.querySelector('.flats__city-btn');
-    const preposition = this.getPreposition(name);
-    cityBtn.innerText = `${preposition} ${cityIn(name)}`;
+    const preposition = this.getPreposition(city.title || city);
+    cityBtn.innerText = `${preposition} ${cityIn(city.title || city)}`;
   }
   closeCities() {
     this.citiesElement.remove();

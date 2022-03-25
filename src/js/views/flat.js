@@ -34,7 +34,8 @@ export const createFlatTemplate = (flat, flatIndex) => {
 function getImagesTemplates (images, flatIndex) {
   let imagesHTML = '';
   let imagesControlHTML = '';
-  for (let i = 0; i < images.length; i++) {
+  const PHOTOS_IN_FLAT = 8;
+  for (let i = 0; i < Math.min(images.length, PHOTOS_IN_FLAT); i++) {
     imagesHTML += `<li class="flat__img-container">
                       <img 
                         class="flat__img preloader" 

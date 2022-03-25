@@ -6,8 +6,13 @@ export const showReviews = (data) => {
   if (!reviewList) {
     return;
   }
-  for (let i = 0; i < Math.min(COUNT_REVIEW, data.length); i++) {
-    reviewList.appendChild(reviewTemplate(data[i]));
+
+  const filteredData = data.filter((review)=> {
+    return review.review_score >= 4 && review.message !== '';
+  });
+
+  for (let i = 0; i < Math.min(COUNT_REVIEW, filteredData.length); i++) {
+    reviewList.appendChild(reviewTemplate(filteredData[i]));
   }
 
 };

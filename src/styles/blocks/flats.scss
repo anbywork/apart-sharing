@@ -31,13 +31,11 @@
   cursor: pointer;
   display: inline;
   padding: 0;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: none;
   background-color: transparent;
   font: inherit;
   color: $blue;
-  border-bottom: 2px dashed $blue;
+  text-decoration: underline 2px dashed $blue;
 }
 
 .flats__list {

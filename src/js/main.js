@@ -8,10 +8,9 @@ import {setCalc} from "./components/calc";
 import {setFeaturesSlider} from "./views/features";
 import {setPartnersForm} from "./components/partners-form";
 import {setLandlordFormPopup} from "./components/landlord-form";
-import {setPosition} from "./utils/get-position";
+import {setFlats} from "./utils/set-flats";
 import {getAndShowFAQ} from "./utils/get-and-show-faqs";
 import {getAndShowReview} from "./utils/get-and-show-reviews";
-import {setCitiesList} from "./utils/set-cities-list";
 
 window.screenWidth = document.documentElement.offsetWidth;
 
@@ -24,10 +23,8 @@ setBtnsList();
 setBurger();
 
 getAndShowFAQ();
-getAndShowReview();
 
-setPosition(); // после получения или не получения показывает квартиры
-setCitiesList();
+setFlats();
 
 setCalc();
 
