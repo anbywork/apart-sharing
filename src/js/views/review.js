@@ -1,10 +1,11 @@
 import dayjs from "dayjs";
+import 'dayjs/locale/ru';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 
 export const reviewTemplate = (data) => {
   const {message, fio, review_score} = data;
-  const date = dayjs(data.created_at).format('D MMM YYYY');
+  const date = dayjs(data.created_at).locale('ru').format('D MMM YYYY');
   const rate = (Math.round(review_score) - review_score) > 0 ? review_score : `${review_score}.0`;
 
   const reviewCode = `<li class="review">

@@ -5,11 +5,10 @@
   height: 100vh;
   background: linear-gradient(170.02deg, #3F4785 0%, #5663F6 100%);
   overflow: hidden;
-  padding-bottom: 60px;
   @media screen and (min-width: $ipad) {
     width: 375px;
   }
-  @media screen and (max-height: 400px) {
+  @media screen and (max-height: 900px) {
     overflow-y: scroll;
   }
 }
@@ -58,18 +57,15 @@
 .page-nav .content-wrapper {
   display: flex;
   flex-direction: column;
+  padding-top: 100px;
   justify-content: flex-end;
   height: 100%;
   @media screen and (min-width: $ipad) {
     padding: 30px;
+    padding-top: 100px;
   }
-  @media screen and (min-width: $ipadpro) {
-    padding: 30px;
-  }
-  @media screen and (max-height: 400px) {
+  @media screen and (max-height: 900px) {
     justify-content: flex-start;
-    padding-top: 30px;
-    margin-bottom: 100px;
   }
   
 }
@@ -92,7 +88,7 @@
   font-size: 20px;
   line-height: 23px;
   color: $white;
-  @media screen and (min-width: $ipad) {
+  @media screen and (min-width: $ipad) and (min-height: 801px) {
     font-weight: bold;
     font-size: 25px;
     line-height: 29px;
@@ -106,19 +102,11 @@
 }
 
 .page-nav .btn-list {
-  margin-top: 40px;
-  align-items: stretch;
   flex-direction: column;
-  @media screen and (min-width: $ipad) {
-    margin-top: 60px;
-  }
-  @media screen and (min-width: $ipadpro) {
-    margin-top: 100px;
-  }
-  @media screen and (min-width: $desktop) {
-    margin-top: 60px;
-    flex-direction: column;
-  }
+  align-items: stretch;
+  margin-top: auto;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .page-nav .btn {
